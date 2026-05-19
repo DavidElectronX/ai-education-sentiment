@@ -31,7 +31,7 @@
 body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 15% 10%,rgba(87,214,141,.18),transparent 28%),radial-gradient(circle at 85% 5%,rgba(158,167,255,.22),transparent 32%),radial-gradient(circle at 50% 90%,rgba(255,180,84,.13),transparent 34%),linear-gradient(180deg,#080a12 0%,#0b0f19 58%,#080a12 100%)}
 body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.28;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000,transparent 78%)}
 .wrap{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:32px 0 56px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:28px}.brand{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.pulse{width:12px;height:12px;border-radius:50%;background:var(--supportive);box-shadow:0 0 0 7px rgba(87,214,141,.14),0 0 30px rgba(87,214,141,.65)}.meta{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.chip{border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--muted);border-radius:999px;padding:8px 11px;font:600 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.06em}
-.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(330px,.85fr);gap:22px;align-items:stretch;margin-bottom:22px}.hero-main,.hero-card,.panel{background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border:1px solid var(--line);box-shadow:0 24px 90px rgba(0,0,0,.28);border-radius:var(--radius);position:relative;overflow:hidden}.hero-main{padding:34px;min-height:360px}.hero-main:before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(135,167,255,.28),transparent 62%)}.eyebrow{font:700 12px/1 JetBrains Mono,monospace;color:var(--accent);letter-spacing:.13em;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:"Instrument Serif",Georgia,serif;font-size:clamp(3.5rem,9vw,7.6rem);line-height:.84;letter-spacing:-.055em;margin:0 0 24px;max-width:8.7ch}.readout{font-size:clamp(1.25rem,2.5vw,2rem);font-weight:750;letter-spacing:-.035em;max-width:690px;margin:0;color:#fff}.readout span{color:var(--supportive)}.subline{max-width:62ch;color:var(--muted);margin:18px 0 0;font-size:15px}.hero-card{padding:24px;display:flex;flex-direction:column;gap:18px}.big-number{font-size:clamp(4rem,9vw,7.4rem);font-weight:850;letter-spacing:-.08em;line-height:.82}.big-label{color:var(--muted);font-size:14px}.stance-pill{display:inline-flex;align-items:center;gap:8px;width:max-content;border-radius:999px;padding:8px 12px;background:rgba(255,255,255,.07);border:1px solid var(--line);font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em}.dot{width:10px;height:10px;border-radius:50%;background:currentColor}.bars{display:grid;gap:12px;margin-top:auto}.mini-bar{display:grid;grid-template-columns:98px minmax(0,1fr) 44px;gap:10px;align-items:center;font:700 12px/1 JetBrains Mono,monospace;color:var(--muted);text-transform:uppercase}.track{height:12px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.fill{height:100%;border-radius:inherit;min-width:2px}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}.stat{padding:17px;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.stat .label{font-size:19px;line-height:1.05;font-weight:850;letter-spacing:-.035em;color:var(--text);text-transform:none}.stat .value{color:var(--muted);font-size:13px;margin-top:9px;font-weight:650;letter-spacing:0}.layout{display:grid;grid-template-columns:1.4fr .8fr;gap:22px}.panel{padding:24px}.panel.full{grid-column:1/-1}.panel-title{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}.panel h2{font-size:25px;line-height:1.05;letter-spacing:-.04em;margin:0}.panel p{margin:7px 0 0;color:var(--muted);font-size:14px;max-width:60ch}.tag{font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);white-space:nowrap}.chart-wrap{position:relative;height:330px}.chart-wrap.short{height:280px}.topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.topic-card{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:13px;min-height:118px}.topic-name{font-weight:800;letter-spacing:-.02em}.topic-total{font:700 12px/1 JetBrains Mono,monospace;color:var(--dim);margin-top:5px}.topic-stack{display:flex;height:11px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.07);margin:13px 0 11px}.topic-line{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px}.topic-line strong{color:var(--text)}.source-list,.quote-list{display:grid;gap:14px}.source-item{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}.source-name{font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.source-stack{height:34px;display:flex;overflow:hidden;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid var(--line)}.source-stack span{height:100%}.quote{border-radius:22px;padding:20px;background:rgba(255,255,255,.052);border:1px solid var(--line)}.quote blockquote{font-family:"Instrument Serif",Georgia,serif;font-size:26px;line-height:1.08;margin:0;letter-spacing:-.02em}.quote-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.quote-meta span{font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:rgba(255,255,255,.06);border-radius:999px;padding:7px 9px}.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.legend span{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.06em}.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}.loading,.err,.empty{border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:var(--radius);padding:44px;text-align:center;color:var(--muted)}.err{text-align:left;border-color:rgba(255,103,103,.45);color:#ffd8d8}.foot{margin-top:22px;color:var(--dim);font-size:12px;text-align:center}.foot button{all:unset;color:var(--muted);text-decoration:underline;cursor:pointer}.method{display:none;margin-top:12px;color:var(--dim);font-size:12px;text-align:center}.method.show{display:block}@media(max-width:920px){.hero,.layout{grid-template-columns:1fr}.stat-grid,.topic-grid{grid-template-columns:repeat(2,1fr)}.hero-main{min-height:auto}.source-item{grid-template-columns:1fr}}@media(max-width:560px){.wrap{width:min(100% - 22px,1180px);padding-top:20px}.topbar{display:block}.meta{justify-content:flex-start;margin-top:14px}.hero-main,.hero-card,.panel{border-radius:22px;padding:20px}.stat-grid,.topic-grid{grid-template-columns:1fr}.chart-wrap{height:300px}.hero h1{font-size:4rem}.big-number{font-size:4.8rem}}
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(330px,.85fr);gap:22px;align-items:stretch;margin-bottom:22px}.hero-main,.hero-card,.panel{background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border:1px solid var(--line);box-shadow:0 24px 90px rgba(0,0,0,.28);border-radius:var(--radius);position:relative;overflow:hidden}.hero-main{padding:34px;min-height:360px}.hero-main:before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(135,167,255,.28),transparent 62%)}.eyebrow{font:700 12px/1 JetBrains Mono,monospace;color:var(--accent);letter-spacing:.13em;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:"Instrument Serif",Georgia,serif;font-size:clamp(3.5rem,9vw,7.6rem);line-height:.84;letter-spacing:-.055em;margin:0 0 24px;max-width:12ch}.readout{font-size:clamp(1.25rem,2.5vw,2rem);font-weight:750;letter-spacing:-.035em;max-width:690px;margin:0;color:#fff}.readout span{color:var(--supportive)}.subline{max-width:62ch;color:var(--muted);margin:18px 0 0;font-size:15px}.hero-card{padding:24px;display:flex;flex-direction:column;gap:18px}.big-number{font-size:clamp(4rem,9vw,7.4rem);font-weight:850;letter-spacing:-.08em;line-height:.82}.big-label{color:var(--muted);font-size:14px}.stance-pill{display:inline-flex;align-items:center;gap:8px;width:max-content;border-radius:999px;padding:8px 12px;background:rgba(255,255,255,.07);border:1px solid var(--line);font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em}.dot{width:10px;height:10px;border-radius:50%;background:currentColor}.bars{display:grid;gap:12px;margin-top:auto}.mini-bar{display:grid;grid-template-columns:110px minmax(0,1fr) 130px;gap:10px;align-items:center;font:700 12px/1 JetBrains Mono,monospace;color:var(--muted);text-transform:uppercase}.track{height:12px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.fill{height:100%;border-radius:inherit;min-width:2px}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}.stat{padding:17px;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.stat .label{font-size:19px;line-height:1.05;font-weight:850;letter-spacing:-.035em;color:var(--text);text-transform:none}.stat .value{color:var(--muted);font-size:13px;margin-top:9px;font-weight:650;letter-spacing:0}.layout{display:grid;grid-template-columns:1.4fr .8fr;gap:22px}.panel{padding:24px}.panel.full{grid-column:1/-1}.panel-title{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}.panel h2{font-size:25px;line-height:1.05;letter-spacing:-.04em;margin:0}.panel p{margin:7px 0 0;color:var(--muted);font-size:14px;max-width:60ch}.tag{font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);white-space:nowrap}.chart-wrap{position:relative;height:330px}.chart-wrap.short{height:280px}.topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.topic-card{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:13px;min-height:118px}.topic-name{font-weight:800;letter-spacing:-.02em}.topic-total{font:700 12px/1 JetBrains Mono,monospace;color:var(--dim);margin-top:5px}.topic-stack{display:flex;height:11px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.07);margin:13px 0 11px}.topic-line{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px}.topic-line strong{color:var(--text)}.source-list,.quote-list{display:grid;gap:14px}.source-item{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}.source-name{font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.source-stack{height:34px;display:flex;overflow:hidden;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid var(--line)}.source-stack span{height:100%}.quote{border-radius:22px;padding:20px;background:rgba(255,255,255,.052);border:1px solid var(--line)}.quote blockquote{font-family:"Instrument Serif",Georgia,serif;font-size:26px;line-height:1.08;margin:0;letter-spacing:-.02em}.quote-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.quote-meta span{font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:rgba(255,255,255,.06);border-radius:999px;padding:7px 9px}.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.legend span{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.06em}.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}.loading,.err,.empty{border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:var(--radius);padding:44px;text-align:center;color:var(--muted)}.err{text-align:left;border-color:rgba(255,103,103,.45);color:#ffd8d8}.foot{margin-top:22px;color:var(--dim);font-size:12px;text-align:center}.foot button{all:unset;color:var(--muted);text-decoration:underline;cursor:pointer}.method{display:none;margin-top:12px;color:var(--dim);font-size:12px;text-align:center}.method.show{display:block}@media(max-width:920px){.hero,.layout{grid-template-columns:1fr}.stat-grid,.topic-grid{grid-template-columns:repeat(2,1fr)}.hero-main{min-height:auto}.source-item{grid-template-columns:1fr}}@media(max-width:560px){.wrap{width:min(100% - 22px,1180px);padding-top:20px}.topbar{display:block}.meta{justify-content:flex-start;margin-top:14px}.hero-main,.hero-card,.panel{border-radius:22px;padding:20px}.stat-grid,.topic-grid{grid-template-columns:1fr}.chart-wrap{height:300px}.hero h1{font-size:4rem}.big-number{font-size:4.8rem}}
 
 .topic-dominant{margin-top:8px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-family:"Inter",system-ui,sans-serif}
  .topic-dominant strong{font-weight:800}
@@ -42,6 +42,24 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.28;background-i
 .quote.expanded blockquote .quote-ellipsis{display:none}
 .quote-toggle{margin-top:14px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);border-radius:999px;padding:9px 12px;font:800 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;cursor:pointer}
 .quote-toggle:hover{background:rgba(255,255,255,.1)}
+
+.about-panel{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-bottom:22px;background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.032));border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 24px 90px rgba(0,0,0,.22)}
+.about-copy p,.method-panel p{margin:0 0 13px;color:var(--muted);font-size:15px;max-width:78ch}
+.about-copy p:last-child,.method-panel p:last-child{margin-bottom:0}
+.panel-title.compact{margin-bottom:14px}
+.definitions{display:grid;grid-template-columns:1fr;gap:10px}
+.definition{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:13px}
+.definition div{display:flex;align-items:center;gap:8px;font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em}
+.definition i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.definition p{margin:8px 0 0;color:var(--muted);font-size:13px}
+.source-counts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.source-count-card{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:16px}
+.source-count-name{font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.source-count-value{font-size:26px;font-weight:850;letter-spacing:-.04em;margin-top:8px}
+.quote-meta a{font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--text);background:rgba(255,255,255,.08);border-radius:999px;padding:7px 9px;text-decoration:none;border:1px solid var(--line)}
+.quote-meta a:hover{background:rgba(255,255,255,.14)}
+@media(max-width:920px){.about-panel{grid-template-columns:1fr}.source-counts{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -59,8 +77,6 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.28;background-i
 
   <div class="foot">
     Public comments from Hacker News and selected YouTube channels. Automated classification is approximate.
-    <button id="method-toggle" type="button">Method note</button>
-    <div id="method" class="method">This dashboard shows public discourse, not population sentiment. Source mix affects the signal.</div>
   </div>
 </div>
 
@@ -83,10 +99,6 @@ Chart.defaults.color = "#a9adbd";
 Chart.defaults.font.family = "Inter";
 Chart.defaults.borderColor = "rgba(255,255,255,.11)";
 
-document.getElementById("method-toggle").addEventListener("click", () => {
-  document.getElementById("method").classList.toggle("show");
-});
-
 load();
 
 async function load(){
@@ -96,8 +108,9 @@ async function load(){
     const data = await res.json();
     render(data);
   }catch(e){
+    console.error("Dashboard data load failed:", e);
     document.getElementById("content").className = "err";
-    document.getElementById("content").innerHTML = `<strong>Data did not load.</strong><br>Check the deployed Apps Script /exec endpoint and public access setting. ${escapeHtml(e.message)}`;
+    document.getElementById("content").textContent = "Data did not load. The latest dataset could not be reached. Refresh the page or check back later.";
   }
 }
 
@@ -116,6 +129,7 @@ function render(data){
   const topTopic = topTopicSummary(rows);
   const topRole = topRoleSummary(rows);
   const sourceCount = new Set(rows.map(r => r.Source).filter(Boolean)).size;
+  const sources = buildSources(rows);
   const days = buildDaily(rows);
   const topics = buildTopics(rows);
   const roles = buildRoles(rows);
@@ -125,22 +139,34 @@ function render(data){
   document.getElementById("content").innerHTML = `
     <section class="hero">
       <div class="hero-main">
-        <div class="eyebrow">What are people saying about AI in school?</div>
-        <h1>The mood is ${escapeHtml(dominant)}.</h1>
-        <p class="readout"><span>${dominantPct}%</span> of tracked comments are currently classified as ${escapeHtml(dominant)}.</p>
-        <p class="subline">This dashboard reads public discourse about what people are saying about AI in education and turns that into a compact daily signal</p>
+        <div class="eyebrow">Daily public discourse signal</div>
+        <h1>What are people saying about GenAI in education?</h1>
+        <p class="readout">The current discourse is mostly <span style="color:${COLORS[dominant]}">${escapeHtml(dominant)}</span>.</p>
+        <p class="subline">${dominantPct}% of tracked comments are classified as ${escapeHtml(dominant)}, based on ${rows.length} public comments from Hacker News and selected YouTube channels.</p>
       </div>
       <aside class="hero-card">
         <div>
-          <div class="big-number">${rows.length}</div>
-          <div class="big-label">classified comments in the current dataset</div>
+          <div class="big-number">${dominantPct}%</div>
+          <div class="big-label">${escapeHtml(titleCase(dominant))} is the leading stance</div>
         </div>
         <div class="stance-pill" style="color:${COLORS[dominant]}"><span class="dot"></span>${escapeHtml(dominant)} leads</div>
         <div class="bars">${STANCES.map(s => stanceBar(s, totals[s], rows.length)).join("")}</div>
       </aside>
     </section>
 
-    <section class="stat-grid">
+    <section class="about-panel">
+      <div class="about-copy">
+        <div class="panel-title compact"><div><h2>About this monitor</h2></div><div class="tag">context</div></div>
+        <p>This page tracks public conversation about generative AI in education. It collects comments from Hacker News and selected YouTube channels, then classifies each comment by stance, topic, likely speaker role, and source. The goal is to turn scattered public discussion into a compact signal: what people are concerned about, what benefits they mention, which topics are most active, and how the tone changes over time.</p>
+        <p>This is not a survey and should not be read as a representative measure of public opinion. It is a monitor of public comments from the sources currently included. Reddit is planned for a future version to broaden the sample and capture more community-level discussion.</p>
+        <p>Automated classification is approximate. The charts are best read as directional patterns, not definitive measurements.</p>
+      </div>
+      <div class="definitions">
+        ${stanceDefinitions()}
+      </div>
+    </section>
+
+    <section class="stat-grid" aria-label="At a glance">
       <div class="stat"><div class="label">Most discussed topic</div><div class="value">${escapeHtml(topTopic.label)}</div></div>
       <div class="stat"><div class="label">Most detected speaker role</div><div class="value">${escapeHtml(topRole.label)}</div></div>
       <div class="stat"><div class="label">Public source${sourceCount === 1 ? "" : "s"}</div><div class="value">${sourceCount}</div></div>
@@ -148,14 +174,10 @@ function render(data){
     </section>
 
     <section class="layout">
-      <div class="panel">
+      <div class="panel full">
         <div class="panel-title"><div><h2>Mood over time</h2><p>Each day adds up to 100%, making stance shifts visible even when comment volume changes.</p></div><div class="tag">daily share</div></div>
         <div class="chart-wrap"><canvas id="stanceChart"></canvas></div>
         ${legend()}
-      </div>
-      <div class="panel">
-        <div class="panel-title"><div><h2>Overall mix</h2><p>The current balance of supportive, skeptical, anxious, and ambivalent comments.</p></div><div class="tag">all rows</div></div>
-        <div class="chart-wrap short"><canvas id="mixChart"></canvas></div>
       </div>
 
       <div class="panel full">
@@ -170,15 +192,28 @@ function render(data){
       </div>
 
       <div class="panel full">
-        <div class="panel-title"><div><h2>Comments of the Day</h2><p>Representative long comments from the supportive and critical ends of the dataset.</p></div><div class="tag">comments</div></div>
+        <div class="panel-title"><div><h2>Where the comments come from</h2><p>The current dataset combines comments from Hacker News and selected YouTube channels. These sources are useful because they contain active public discussion, but they are not neutral mirrors of the wider population. Hacker News tends to overrepresent technical and startup-oriented perspectives. YouTube comments reflect the audience and framing of the selected videos. Future versions will add Reddit to broaden the sample and capture more community-based discussion.</p></div><div class="tag">source mix</div></div>
+        <div class="source-counts" id="sourceCounts"></div>
+      </div>
+
+      <div class="panel full">
+        <div class="panel-title"><div><h2>Voices from the dataset</h2><p>Selected comments that illustrate different sides of the conversation. These examples are not representative on their own, but they show how the categories appear in real public discussion.</p></div><div class="tag">comments</div></div>
         <div class="quote-list" id="quoteList"></div>
       </div>
-    </section>`;
 
+      <div class="panel full method-panel">
+        <div class="panel-title"><div><h2>Methodology and limits</h2></div><div class="tag">read before citing</div></div>
+        <p>This dashboard uses public comments collected from Hacker News and selected YouTube channels. Each comment is cleaned, filtered for relevance, and classified into a small set of categories: stance, topic, likely speaker role, and source.</p>
+        <p>The dashboard should not be read as a representative poll. It does not claim to show what students, teachers, parents, or the general public believe overall. It shows patterns in the public comments currently included in the dataset.</p>
+        <p>The source mix affects the signal. Hacker News tends to reflect a more technical audience. YouTube comments reflect the audiences of the selected channels. Reddit, once added, will likely introduce a different kind of community discussion.</p>
+        <p>Automated labels are approximate. Some comments are sarcastic, ambiguous, or context-dependent. Long comments may contain multiple stances at once. For that reason, the dashboard is best used to identify broad patterns and examples, not to make precise claims about public opinion.</p>
+      </div>
+    </section>`;
   drawStanceChart(days);
   drawMixChart(totals);
   renderTopics(topics);
   drawRoleChart(roles);
+  renderSourceCounts(sources);
   renderQuotes(quotes);
 }
 
@@ -186,7 +221,9 @@ function normalizeRows(rows){
   return rows
     .filter(r => r && r.Topic !== "off_topic")
     .map(r => ({
-      Date: String(r.Date || "").slice(0,10),
+      Date: String(r.CommentDate || r.Date || r.CollectedDate || "").slice(0,10),
+      CollectedDate: String(r.CollectedDate || r.Date || "").slice(0,10),
+      CommentDate: String(r.CommentDate || r.Date || "").slice(0,10),
       Context: String(r.Context || ""),
       Stance: STANCES.includes(r.Stance) ? r.Stance : "ambivalent",
       Topic: TOPICS[r.Topic] ? r.Topic : "other",
@@ -207,7 +244,8 @@ function setMeta(data, rows){
 }
 function stanceBar(s, n, total){
   const width = pct(n,total);
-  return `<div class="mini-bar"><span>${s}</span><div class="track"><div class="fill" style="width:${width}%;background:${COLORS[s]}"></div></div><span>${width}%</span></div>`;
+  const count = Number(n || 0);
+  return `<div class="mini-bar"><span>${titleCase(s)}</span><div class="track"><div class="fill" style="width:${width}%;background:${COLORS[s]}"></div></div><span>${width}% / ${count} comments</span></div>`;
 }
 function countBy(rows, field, allowed){
   const out = {}; allowed.forEach(k => out[k] = 0);
@@ -291,8 +329,20 @@ function renderTopics(topics){
 function drawRoleChart(roles){
   new Chart(document.getElementById("roleChart"), { type:"bar", data:{ labels:roles.map(r => ROLE_LABELS[r.key] || titleCase(r.key)), datasets:STANCES.map(s => ({ label:titleCase(s), data:roles.map(r => r[s] || 0), backgroundColor:COLORS[s], borderRadius:7, borderSkipped:false }))}, options:{ maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{callbacks:{label:c => c.dataset.label + ": " + c.parsed.y}}}, scales:{ x:{stacked:true, ticks:{font:chartFont}, grid:{display:false}}, y:{stacked:true, ticks:{precision:0,font:chartFont}, grid:{color:"rgba(255,255,255,.09)"}}}}});
 }
-function renderSources(sources){
-  document.getElementById("sourceList").innerHTML = sources.map(src => `<div class="source-item"><div class="source-name">${escapeHtml(src.key)}<br><span style="color:var(--dim)">${src.total} items</span></div><div class="source-stack">${STANCES.map(s => `<span style="width:${pct(src[s],src.total)}%;background:${COLORS[s]}" title="${s}: ${pct(src[s],src.total)}%"></span>`).join("")}</div></div>`).join("") + legend();
+function renderSourceCounts(sources){
+  const counts = {};
+  sources.forEach(src => { counts[normalizeSourceName(src.key)] = src.total || 0; });
+  const hn = counts["hackernews"] || counts["hacker news"] || 0;
+  const yt = counts["youtube"] || 0;
+  const rows = [
+    ["Hacker News", hn ? `${hn} comments` : "0 comments"],
+    ["YouTube", yt ? `${yt} comments` : "0 comments"],
+    ["Reddit", "planned"]
+  ];
+  document.getElementById("sourceCounts").innerHTML = rows.map(([name, value]) => `<div class="source-count-card"><div class="source-count-name">${escapeHtml(name)}</div><div class="source-count-value">${escapeHtml(value)}</div></div>`).join("");
+}
+function normalizeSourceName(value){
+  return String(value || "").trim().toLowerCase();
 }
 function pickQuotes(rows){
   const supportive = rows.filter(r => r.Stance === "supportive" && r.FullText.length > 70).sort((a,b) => b.FullText.length - a.FullText.length)[0];
@@ -306,7 +356,8 @@ function renderQuotes(quotes){
     const text = String(r.FullText || r.Snippet || "");
     const parts = splitQuoteText(text, 620);
     const toggle = parts.more ? `<button class="quote-toggle" type="button" data-quote-toggle="${i}" aria-expanded="false">Show full comment</button>` : "";
-    return `<article class="quote" data-quote="${i}"><blockquote>“${escapeHtml(parts.head)}${parts.more ? `<span class="quote-ellipsis">…</span><span class="quote-more">${escapeHtml(parts.more)}</span>` : ""}”</blockquote>${toggle}<div class="quote-meta"><span style="color:${COLORS[r.Stance]}">${escapeHtml(r.Stance)}</span><span>${escapeHtml(TOPICS[r.Topic] || "Other")}</span><span>${escapeHtml(r.Source)}</span><span>${escapeHtml(r.Date)}</span></div></article>`;
+    const sourceLink = r.SourceUrl ? `<a href="${escapeHtml(r.SourceUrl)}" target="_blank" rel="noopener noreferrer">View source</a>` : "";
+    return `<article class="quote" data-quote="${i}"><blockquote>“${escapeHtml(parts.head)}${parts.more ? `<span class="quote-ellipsis">…</span><span class="quote-more">${escapeHtml(parts.more)}</span>` : ""}”</blockquote>${toggle}<div class="quote-meta"><span style="color:${COLORS[r.Stance]}">${escapeHtml(r.Stance)}</span><span>${escapeHtml(TOPICS[r.Topic] || "Other")}</span><span>${escapeHtml(r.Source)}</span><span>${escapeHtml(r.Date)}</span>${sourceLink}</div></article>`;
   }).join("");
   el.querySelectorAll("[data-quote-toggle]").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -323,6 +374,15 @@ function splitQuoteText(text, limit){
   const cut = clean.lastIndexOf(" ", limit);
   const at = cut > 420 ? cut : limit;
   return { head: clean.slice(0, at).trim(), more: clean.slice(at).trim() };
+}
+function stanceDefinitions(){
+  const defs = {
+    supportive:"Comments that frame GenAI as useful, promising, efficient, or beneficial for teaching, learning, productivity, accessibility, or creativity.",
+    skeptical:"Comments that question GenAI’s value, reliability, incentives, policy claims, hype, or educational impact.",
+    anxious:"Comments that express concern about risks such as cheating, learning loss, privacy, labour, equity, student dependence, or institutional change.",
+    ambivalent:"Comments that are mixed, neutral, unclear, or do not fit cleanly into one stance."
+  };
+  return STANCES.map(s => `<div class="definition"><div><i style="background:${COLORS[s]}"></i><strong>${titleCase(s)}</strong></div><p>${escapeHtml(defs[s])}</p></div>`).join("");
 }
 function legend(){ return `<div class="legend">${STANCES.map(s => `<span title="${titleCase(s)}"><i style="background:${COLORS[s]}"></i>${s}</span>`).join("")}</div>`; }
 function titleCase(s){ return String(s || "").replace(/_/g," ").replace(/\b\w/g, c => c.toUpperCase()); }
