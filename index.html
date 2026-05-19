@@ -31,7 +31,7 @@
 body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 15% 10%,rgba(87,214,141,.18),transparent 28%),radial-gradient(circle at 85% 5%,rgba(158,167,255,.22),transparent 32%),radial-gradient(circle at 50% 90%,rgba(255,180,84,.13),transparent 34%),linear-gradient(180deg,#080a12 0%,#0b0f19 58%,#080a12 100%)}
 body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.28;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000,transparent 78%)}
 .wrap{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:32px 0 56px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:28px}.brand{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.pulse{width:12px;height:12px;border-radius:50%;background:var(--supportive);box-shadow:0 0 0 7px rgba(87,214,141,.14),0 0 30px rgba(87,214,141,.65)}.meta{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.chip{border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--muted);border-radius:999px;padding:8px 11px;font:600 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.06em}
-.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(330px,.85fr);gap:22px;align-items:stretch;margin-bottom:22px}.hero-main,.hero-card,.panel{background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border:1px solid var(--line);box-shadow:0 24px 90px rgba(0,0,0,.28);border-radius:var(--radius);position:relative;overflow:hidden}.hero-main{padding:34px;min-height:360px}.hero-main:before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(135,167,255,.28),transparent 62%)}.eyebrow{font:700 12px/1 JetBrains Mono,monospace;color:var(--accent);letter-spacing:.13em;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:"Instrument Serif",Georgia,serif;font-size:clamp(3.5rem,9vw,7.6rem);line-height:.84;letter-spacing:-.055em;margin:0 0 24px;max-width:12ch}.readout{font-size:clamp(1.25rem,2.5vw,2rem);font-weight:750;letter-spacing:-.035em;max-width:690px;margin:0;color:#fff}.readout span{color:var(--supportive)}.subline{max-width:62ch;color:var(--muted);margin:18px 0 0;font-size:15px}.hero-card{padding:24px;display:flex;flex-direction:column;gap:18px}.big-number{font-size:clamp(4rem,9vw,7.4rem);font-weight:850;letter-spacing:-.08em;line-height:.82}.big-label{color:var(--muted);font-size:14px}.stance-pill{display:inline-flex;align-items:center;gap:8px;width:max-content;border-radius:999px;padding:8px 12px;background:rgba(255,255,255,.07);border:1px solid var(--line);font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em}.dot{width:10px;height:10px;border-radius:50%;background:currentColor}.bars{display:grid;gap:12px;margin-top:auto}.mini-bar{display:grid;grid-template-columns:110px minmax(0,1fr) 130px;gap:10px;align-items:center;font:700 12px/1 JetBrains Mono,monospace;color:var(--muted);text-transform:uppercase}.track{height:12px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.fill{height:100%;border-radius:inherit;min-width:2px}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}.stat{padding:17px;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.stat .label{font-size:19px;line-height:1.05;font-weight:850;letter-spacing:-.035em;color:var(--text);text-transform:none}.stat .value{color:var(--muted);font-size:13px;margin-top:9px;font-weight:650;letter-spacing:0}.layout{display:grid;grid-template-columns:1.4fr .8fr;gap:22px}.panel{padding:24px}.panel.full{grid-column:1/-1}.panel-title{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}.panel h2{font-size:25px;line-height:1.05;letter-spacing:-.04em;margin:0}.panel p{margin:7px 0 0;color:var(--muted);font-size:14px;max-width:60ch}.tag{font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);white-space:nowrap}.chart-wrap{position:relative;height:330px}.chart-wrap.short{height:280px}.topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.topic-card{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:13px;min-height:118px}.topic-name{font-weight:800;letter-spacing:-.02em}.topic-total{font:700 12px/1 JetBrains Mono,monospace;color:var(--dim);margin-top:5px}.topic-stack{display:flex;height:11px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.07);margin:13px 0 11px}.topic-line{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px}.topic-line strong{color:var(--text)}.source-list,.quote-list{display:grid;gap:14px}.source-item{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}.source-name{font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.source-stack{height:34px;display:flex;overflow:hidden;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid var(--line)}.source-stack span{height:100%}.quote{border-radius:22px;padding:20px;background:rgba(255,255,255,.052);border:1px solid var(--line)}.quote blockquote{font-family:"Instrument Serif",Georgia,serif;font-size:26px;line-height:1.08;margin:0;letter-spacing:-.02em}.quote-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.quote-meta span{font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:rgba(255,255,255,.06);border-radius:999px;padding:7px 9px}.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.legend span{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.06em}.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}.loading,.err,.empty{border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:var(--radius);padding:44px;text-align:center;color:var(--muted)}.err{text-align:left;border-color:rgba(255,103,103,.45);color:#ffd8d8}.foot{margin-top:22px;color:var(--dim);font-size:12px;text-align:center}.foot button{all:unset;color:var(--muted);text-decoration:underline;cursor:pointer}.method{display:none;margin-top:12px;color:var(--dim);font-size:12px;text-align:center}.method.show{display:block}@media(max-width:920px){.hero,.layout{grid-template-columns:1fr}.stat-grid,.topic-grid{grid-template-columns:repeat(2,1fr)}.hero-main{min-height:auto}.source-item{grid-template-columns:1fr}}@media(max-width:560px){.wrap{width:min(100% - 22px,1180px);padding-top:20px}.topbar{display:block}.meta{justify-content:flex-start;margin-top:14px}.hero-main,.hero-card,.panel{border-radius:22px;padding:20px}.stat-grid,.topic-grid{grid-template-columns:1fr}.chart-wrap{height:300px}.hero h1{font-size:4rem}.big-number{font-size:4.8rem}}
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(330px,.85fr);gap:22px;align-items:stretch;margin-bottom:22px}.hero.unified{display:block}.hero-main,.hero-card,.panel{background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border:1px solid var(--line);box-shadow:0 24px 90px rgba(0,0,0,.28);border-radius:var(--radius);position:relative;overflow:hidden}.hero-main{padding:34px;min-height:360px}.hero.unified .hero-main{min-height:auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:28px;align-items:end}.hero-heading{grid-column:1/-1;position:relative;z-index:1}.hero-copy{position:relative;z-index:1}.hero-breakdown{position:relative;z-index:1;padding:22px;border-radius:24px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.hero-overview{max-width:60ch;color:var(--muted);font-size:15px;margin:0 0 20px}.hero-main:before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(135,167,255,.28),transparent 62%)}.eyebrow{font:700 12px/1 JetBrains Mono,monospace;color:var(--accent);letter-spacing:.13em;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:clamp(3rem,7.2vw,6.6rem);line-height:.92;letter-spacing:-.075em;margin:0;max-width:none;font-weight:850}.readout{font-size:clamp(1.25rem,2.5vw,2rem);font-weight:750;letter-spacing:-.035em;max-width:690px;margin:0;color:#fff}.readout span{color:var(--supportive)}.subline{max-width:62ch;color:var(--muted);margin:18px 0 0;font-size:15px}.hero-card{padding:24px;display:flex;flex-direction:column;gap:18px}.big-number{font-size:clamp(4rem,9vw,7.4rem);font-weight:850;letter-spacing:-.08em;line-height:.82}.big-label{color:var(--muted);font-size:14px}.stance-pill{display:inline-flex;align-items:center;gap:8px;width:max-content;border-radius:999px;padding:8px 12px;background:rgba(255,255,255,.07);border:1px solid var(--line);font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em}.dot{width:10px;height:10px;border-radius:50%;background:currentColor}.bars{display:grid;gap:12px;margin-top:auto}.mini-bar{display:grid;grid-template-columns:110px minmax(0,1fr) 130px;gap:10px;align-items:center;font:700 12px/1 JetBrains Mono,monospace;color:var(--muted);text-transform:uppercase}.track{height:12px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.fill{height:100%;border-radius:inherit;min-width:2px}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}.stat{padding:17px;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.stat .label{font-size:19px;line-height:1.05;font-weight:850;letter-spacing:-.035em;color:var(--text);text-transform:none}.stat .value{color:var(--muted);font-size:13px;margin-top:9px;font-weight:650;letter-spacing:0}.layout{display:grid;grid-template-columns:1.4fr .8fr;gap:22px}.panel{padding:24px}.panel.full{grid-column:1/-1}.panel-title{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}.panel h2{font-size:25px;line-height:1.05;letter-spacing:-.04em;margin:0}.panel p{margin:7px 0 0;color:var(--muted);font-size:14px;max-width:60ch}.tag{font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);white-space:nowrap}.chart-wrap{position:relative;height:330px}.chart-wrap.short{height:280px}.topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.topic-card{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:13px;min-height:118px}.topic-name{font-weight:800;letter-spacing:-.02em}.topic-total{font:700 12px/1 JetBrains Mono,monospace;color:var(--dim);margin-top:5px}.topic-stack{display:flex;height:11px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.07);margin:13px 0 11px}.topic-line{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px}.topic-line strong{color:var(--text)}.source-list,.quote-list{display:grid;gap:14px}.source-item{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}.source-name{font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.source-stack{height:34px;display:flex;overflow:hidden;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid var(--line)}.source-stack span{height:100%}.quote{border-radius:22px;padding:20px;background:rgba(255,255,255,.052);border:1px solid var(--line)}.quote blockquote{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:22px;line-height:1.35;margin:0;letter-spacing:-.025em;font-weight:650}.quote-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.quote-meta span{font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:rgba(255,255,255,.06);border-radius:999px;padding:7px 9px}.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.legend span{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.06em}.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}.loading,.err,.empty{border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:var(--radius);padding:44px;text-align:center;color:var(--muted)}.err{text-align:left;border-color:rgba(255,103,103,.45);color:#ffd8d8}.foot{margin-top:22px;color:var(--dim);font-size:12px;text-align:center}.foot button{all:unset;color:var(--muted);text-decoration:underline;cursor:pointer}.method{display:none;margin-top:12px;color:var(--dim);font-size:12px;text-align:center}.method.show{display:block}@media(max-width:920px){.hero,.layout{grid-template-columns:1fr}.hero.unified .hero-main{grid-template-columns:1fr;align-items:start}.stat-grid,.topic-grid{grid-template-columns:repeat(2,1fr)}.hero-main{min-height:auto}.source-item{grid-template-columns:1fr}}@media(max-width:560px){.wrap{width:min(100% - 22px,1180px);padding-top:20px}.topbar{display:block}.meta{justify-content:flex-start;margin-top:14px}.hero-main,.hero-card,.panel{border-radius:22px;padding:20px}.stat-grid,.topic-grid{grid-template-columns:1fr}.chart-wrap{height:300px}.hero h1{font-size:3.25rem}.big-number{font-size:4.8rem}}
 
 .topic-dominant{margin-top:8px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-family:"Inter",system-ui,sans-serif}
  .topic-dominant strong{font-weight:800}
@@ -44,15 +44,21 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.28;background-i
 .quote-toggle:hover{background:rgba(255,255,255,.1)}
 
 .about-panel{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-bottom:22px;background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.032));border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 24px 90px rgba(0,0,0,.22)}
-.about-copy p,.method-panel p{margin:0 0 13px;color:var(--muted);font-size:15px;max-width:78ch}
+.about-copy p,.method-panel p{margin:0 0 13px;color:var(--muted);font-size:15px;max-width:none}
 .about-copy p:last-child,.method-panel p:last-child{margin-bottom:0}
+.info-panel{display:grid;gap:22px}
+.info-section{border-top:1px solid var(--line);padding-top:20px}
+.info-section:first-of-type{border-top:0;padding-top:0}
+.info-section h3{font-size:18px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;color:var(--text)}
+.info-section p{max-width:none;line-height:1.6}
+.info-section .definitions{margin-top:10px}
 .panel-title.compact{margin-bottom:14px}
 .definitions{display:grid;grid-template-columns:1fr;gap:10px}
 .definition{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:13px}
 .definition div{display:flex;align-items:center;gap:8px;font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em}
 .definition i{width:10px;height:10px;border-radius:50%;display:inline-block}
 .definition p{margin:8px 0 0;color:var(--muted);font-size:13px}
-.source-counts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.source-counts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .source-count-card{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:16px}
 .source-count-name{font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .source-count-value{font-size:26px;font-weight:850;letter-spacing:-.04em;margin-top:8px}
@@ -76,7 +82,7 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.28;background-i
   <main id="content" class="loading">Loading the latest discourse signal…</main>
 
   <div class="foot">
-    Public comments from Hacker News and selected YouTube channels. Automated classification is approximate.
+    Public comments from Hacker News, selected YouTube channels, and Bluesky. Automated classification is approximate.
   </div>
 </div>
 
@@ -137,34 +143,24 @@ function render(data){
 
   document.getElementById("content").className = "";
   document.getElementById("content").innerHTML = `
-    <section class="hero">
+    <section class="hero unified">
       <div class="hero-main">
-        <div class="eyebrow">Daily public discourse signal</div>
-        <h1>What are people saying about GenAI in education?</h1>
-        <p class="readout">The current discourse is mostly <span style="color:${COLORS[dominant]}">${escapeHtml(dominant)}</span>.</p>
-        <p class="subline">${dominantPct}% of tracked comments are classified as ${escapeHtml(dominant)}, based on ${rows.length} public comments from Hacker News and selected YouTube channels.</p>
-      </div>
-      <aside class="hero-card">
-        <div>
-          <div class="big-number">${dominantPct}%</div>
-          <div class="big-label">${escapeHtml(titleCase(dominant))} is the leading stance</div>
+        <div class="hero-heading">
+          <div class="eyebrow">Daily public discourse signal</div>
+          <h1>What are people saying about GenAI in education?</h1>
         </div>
-        <div class="stance-pill" style="color:${COLORS[dominant]}"><span class="dot"></span>${escapeHtml(dominant)} leads</div>
-        <div class="bars">${STANCES.map(s => stanceBar(s, totals[s], rows.length)).join("")}</div>
-      </aside>
+
+        <div class="hero-copy">
+          <p class="readout">Current discourse: mostly <span style="color:${COLORS[dominant]}">${escapeHtml(dominant)}</span></p>
+          <p class="subline">${dominantPct}% of tracked comments are classified as ${escapeHtml(dominant)}, based on ${rows.length} public comments from Hacker News, selected YouTube channels, and Bluesky.</p>
+        </div>
+
+        <div class="hero-breakdown" aria-label="Stance breakdown">
+          <div class="bars">${STANCES.map(s => stanceBar(s, totals[s], rows.length)).join("")}</div>
+        </div>
+      </div>
     </section>
 
-    <section class="about-panel">
-      <div class="about-copy">
-        <div class="panel-title compact"><div><h2>About this monitor</h2></div><div class="tag">context</div></div>
-        <p>This page tracks public conversation about generative AI in education. It collects comments from Hacker News and selected YouTube channels, then classifies each comment by stance, topic, likely speaker role, and source. The goal is to turn scattered public discussion into a compact signal: what people are concerned about, what benefits they mention, which topics are most active, and how the tone changes over time.</p>
-        <p>This is not a survey and should not be read as a representative measure of public opinion. It is a monitor of public comments from the sources currently included. Reddit is planned for a future version to broaden the sample and capture more community-level discussion.</p>
-        <p>Automated classification is approximate. The charts are best read as directional patterns, not definitive measurements.</p>
-      </div>
-      <div class="definitions">
-        ${stanceDefinitions()}
-      </div>
-    </section>
 
     <section class="stat-grid" aria-label="At a glance">
       <div class="stat"><div class="label">Most discussed topic</div><div class="value">${escapeHtml(topTopic.label)}</div></div>
@@ -192,25 +188,41 @@ function render(data){
       </div>
 
       <div class="panel full">
-        <div class="panel-title"><div><h2>Where the comments come from</h2><p>The current dataset combines comments from Hacker News and selected YouTube channels. These sources are useful because they contain active public discussion, but they are not neutral mirrors of the wider population. Hacker News tends to overrepresent technical and startup-oriented perspectives. YouTube comments reflect the audience and framing of the selected videos. Future versions will add Reddit to broaden the sample and capture more community-based discussion.</p></div><div class="tag">source mix</div></div>
-        <div class="source-counts" id="sourceCounts"></div>
-      </div>
-
-      <div class="panel full">
-        <div class="panel-title"><div><h2>Voices from the dataset</h2><p>Selected comments that illustrate different sides of the conversation. These examples are not representative on their own, but they show how the categories appear in real public discussion.</p></div><div class="tag">comments</div></div>
+        <div class="panel-title"><div><h2>Voices from the dataset</h2><p>Two strong examples from the current dataset. These examples are not representative on their own, but they show how the categories appear in real public discussion.</p></div><div class="tag">comments</div></div>
         <div class="quote-list" id="quoteList"></div>
       </div>
 
-      <div class="panel full method-panel">
-        <div class="panel-title"><div><h2>Methodology and limits</h2></div><div class="tag">read before citing</div></div>
-        <p>This dashboard uses public comments collected from Hacker News and selected YouTube channels. Each comment is cleaned, filtered for relevance, and classified into a small set of categories: stance, topic, likely speaker role, and source.</p>
-        <p>The dashboard should not be read as a representative poll. It does not claim to show what students, teachers, parents, or the general public believe overall. It shows patterns in the public comments currently included in the dataset.</p>
-        <p>The source mix affects the signal. Hacker News tends to reflect a more technical audience. YouTube comments reflect the audiences of the selected channels. Reddit, once added, will likely introduce a different kind of community discussion.</p>
-        <p>Automated labels are approximate. Some comments are sarcastic, ambiguous, or context-dependent. Long comments may contain multiple stances at once. For that reason, the dashboard is best used to identify broad patterns and examples, not to make precise claims about public opinion.</p>
+      <div class="panel full method-panel info-panel">
+        <div class="panel-title"><div><h2>About the dataset</h2><p>Context, sources, and limits for reading this monitor.</p></div><div class="tag">read before citing</div></div>
+
+        <div class="info-section">
+          <h3>About this monitor</h3>
+          <p>This page tracks public conversation about generative AI in education across public discussion spaces. It collects comments and posts from Hacker News, selected YouTube channels, and Bluesky, then classifies each item by stance, topic, likely speaker role, and source. The goal is to turn scattered public discussion into a compact daily signal: what people are concerned about, what benefits they mention, which topics are most active, who appears to be speaking, and how the tone changes over time.</p>
+          <p>This is not a survey and should not be read as a representative measure of public opinion. It is a monitor of public comments and posts from the sources currently included. The dataset reflects what was visible to the collection script during the lookback window, what matched the project’s search terms, and what passed the relevance filter. Reddit is planned for a future version to broaden the sample and capture more community-level discussion.</p>
+          <p>Automated classification is approximate. The charts are best read as directional patterns, not definitive measurements. Individual comments can be sarcastic, ambiguous, or mixed, so the dashboard is most useful for spotting recurring themes and example language rather than making precise claims about what any group believes overall.</p>
+        </div>
+
+        <div class="info-section">
+          <h3>Stance definitions</h3>
+          <div class="definitions">${stanceDefinitions()}</div>
+        </div>
+
+        <div class="info-section">
+          <h3>Where the comments come from</h3>
+          <p>The current dataset combines public comments and posts from Hacker News, selected YouTube channels, and Bluesky. These sources are useful because they contain active public discussion, but they are not neutral mirrors of the wider population. Hacker News tends to overrepresent technical, startup-oriented, and policy-adjacent perspectives. YouTube comments reflect the audiences of the selected videos and the framing created by those channels. Bluesky reflects public posts surfaced through keyword search and may overrepresent people who actively post about education, technology, media, labour, or public policy. Future versions will add Reddit to broaden the sample and capture more community-based discussion.</p>
+          <div class="source-counts" id="sourceCounts"></div>
+        </div>
+
+        <div class="info-section">
+          <h3>Methodology and limits</h3>
+          <p>This dashboard uses public comments and posts collected from Hacker News, selected YouTube channels, and Bluesky. Each item is cleaned, filtered for relevance, and classified into a small set of categories: stance, topic, likely speaker role, and source. The same normalized fields are used across sources so that posts from different platforms can be compared in one view.</p>
+          <p>The dashboard should not be read as a representative poll. It does not claim to show what students, teachers, parents, faculty, administrators, or the general public believe overall. It shows patterns in the public comments currently included in the dataset, and those patterns are shaped by the sources, search terms, API availability, and daily collection window.</p>
+          <p>The source mix affects the signal. Hacker News tends to reflect a more technical audience. YouTube comments reflect the audiences of the selected channels. Bluesky reflects public keyword-matched posts from people who choose to post publicly. Reddit, once added, will likely introduce a different kind of community discussion, including more topic-specific and community-moderated conversations.</p>
+          <p>Automated labels are approximate. Some comments are sarcastic, ambiguous, or context-dependent. Long comments may contain multiple stances at once. A single comment can also mention several topics, while the classifier assigns one primary topic for charting. For that reason, the dashboard is best used to identify broad patterns, shifts, and examples, not to make precise claims about public opinion.</p>
+        </div>
       </div>
     </section>`;
   drawStanceChart(days);
-  drawMixChart(totals);
   renderTopics(topics);
   drawRoleChart(roles);
   renderSourceCounts(sources);
@@ -334,9 +346,11 @@ function renderSourceCounts(sources){
   sources.forEach(src => { counts[normalizeSourceName(src.key)] = src.total || 0; });
   const hn = counts["hackernews"] || counts["hacker news"] || 0;
   const yt = counts["youtube"] || 0;
+  const bsky = counts["bluesky"] || counts["bsky"] || 0;
   const rows = [
     ["Hacker News", hn ? `${hn} comments` : "0 comments"],
     ["YouTube", yt ? `${yt} comments` : "0 comments"],
+    ["Bluesky", bsky ? `${bsky} posts` : "0 posts"],
     ["Reddit", "planned"]
   ];
   document.getElementById("sourceCounts").innerHTML = rows.map(([name, value]) => `<div class="source-count-card"><div class="source-count-name">${escapeHtml(name)}</div><div class="source-count-value">${escapeHtml(value)}</div></div>`).join("");
@@ -345,16 +359,72 @@ function normalizeSourceName(value){
   return String(value || "").trim().toLowerCase();
 }
 function pickQuotes(rows){
-  const supportive = rows.filter(r => r.Stance === "supportive" && r.FullText.length > 70).sort((a,b) => b.FullText.length - a.FullText.length)[0];
-  const critical = rows.filter(r => ["skeptical","anxious"].includes(r.Stance) && r.FullText.length > 70).sort((a,b) => b.FullText.length - a.FullText.length)[0];
-  return [supportive, critical].filter(Boolean);
+  // Pick two strong examples, while preferring stance diversity.
+  const scored = rows
+    .filter(r => quoteText(r).length >= 70)
+    .map(r => ({ row:r, score:quoteStrength(r, r.Stance) }))
+    .sort((a,b) => b.score - a.score);
+
+  const picked = [];
+  const usedStances = new Set();
+
+  scored.forEach(item => {
+    if(picked.length >= 2) return;
+    if(!usedStances.has(item.row.Stance)){
+      picked.push(item.row);
+      usedStances.add(item.row.Stance);
+    }
+  });
+
+  scored.forEach(item => {
+    if(picked.length >= 2 && !picked.includes(item.row)) return;
+    if(picked.length < 2 && !picked.includes(item.row)) picked.push(item.row);
+  });
+
+  return picked.slice(0, 2);
+}
+function bestQuoteFor(rows, stance){
+  const candidates = rows.filter(r => r.Stance === stance && quoteText(r).length >= 70);
+  if(!candidates.length) return null;
+  return candidates
+    .map(r => ({ row:r, score:quoteStrength(r, stance) }))
+    .sort((a,b) => b.score - a.score)[0].row;
+}
+function quoteText(r){
+  return String(r.FullText || r.Snippet || "").trim();
+}
+function quoteStrength(r, stance){
+  const text = quoteText(r);
+  const lower = text.toLowerCase();
+  const stanceTerms = {
+    supportive:["useful","helpful","benefit","beneficial","productivity","efficient","accessibility","creative","creativity","learn better","improve","promising","tool","assist","support"],
+    skeptical:["hype","unreliable","wrong","bullshit","doesn’t work","doesn't work","not useful","overrated","incentive","policy","claims","doubt","skeptical","quality","value"],
+    anxious:["cheating","plagiarism","privacy","risk","worried","concern","dependence","dependent","replace","job","labour","labor","equity","surveillance","learning loss","harm","threat"]
+  };
+  const topicTerms = {
+    integrity:["cheat","cheating","plagiarism","integrity"],
+    assessment:["assessment","grade","grading","exam","test","assignment"],
+    equity:["equity","access","accessibility","divide","unequal"],
+    workload:["workload","time","admin","productivity","efficient"],
+    learning_quality:["learn","learning","quality","understand","thinking"],
+    privacy:["privacy","data","surveillance"],
+    other:[]
+  };
+  const matches = (stanceTerms[stance] || []).reduce((n, term) => n + (lower.includes(term) ? 1 : 0), 0);
+  const topicMatches = (topicTerms[r.Topic] || []).reduce((n, term) => n + (lower.includes(term) ? 1 : 0), 0);
+  const length = text.length;
+  const substance = Math.min(length, 900) / 18;
+  const tooLongPenalty = length > 1800 ? 25 : length > 1200 ? 10 : 0;
+  const engagement = Math.min(Number(r.Engagement || 0), 25);
+  const sourceBonus = r.SourceUrl ? 4 : 0;
+  return (matches * 18) + (topicMatches * 8) + substance + engagement + sourceBonus - tooLongPenalty;
 }
 function renderQuotes(quotes){
   const el = document.getElementById("quoteList");
-  if(!quotes.length){ el.innerHTML = `<div class="quote"><blockquote>Not enough long comments yet to surface voices.</blockquote></div>`; return; }
+  if(!quotes.length){ el.innerHTML = `<div class="quote"><blockquote>Not enough substantial comments yet to surface voices.</blockquote></div>`; return; }
   el.innerHTML = quotes.map((r, i) => {
     const text = String(r.FullText || r.Snippet || "");
-    const parts = splitQuoteText(text, 620);
+    const parts = splitQuoteText(text, 110);
     const toggle = parts.more ? `<button class="quote-toggle" type="button" data-quote-toggle="${i}" aria-expanded="false">Show full comment</button>` : "";
     const sourceLink = r.SourceUrl ? `<a href="${escapeHtml(r.SourceUrl)}" target="_blank" rel="noopener noreferrer">View source</a>` : "";
     return `<article class="quote" data-quote="${i}"><blockquote>“${escapeHtml(parts.head)}${parts.more ? `<span class="quote-ellipsis">…</span><span class="quote-more">${escapeHtml(parts.more)}</span>` : ""}”</blockquote>${toggle}<div class="quote-meta"><span style="color:${COLORS[r.Stance]}">${escapeHtml(r.Stance)}</span><span>${escapeHtml(TOPICS[r.Topic] || "Other")}</span><span>${escapeHtml(r.Source)}</span><span>${escapeHtml(r.Date)}</span>${sourceLink}</div></article>`;
@@ -372,7 +442,7 @@ function splitQuoteText(text, limit){
   const clean = String(text || "").trim();
   if(clean.length <= limit) return { head: clean, more: "" };
   const cut = clean.lastIndexOf(" ", limit);
-  const at = cut > 420 ? cut : limit;
+  const at = cut > 70 ? cut : limit;
   return { head: clean.slice(0, at).trim(), more: clean.slice(at).trim() };
 }
 function stanceDefinitions(){
