@@ -6,66 +6,17 @@
 <title>GenAI in Education — Discourse Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
 :root{
-  --bg:#080a12;
-  --panel:#111521;
-  --panel-2:#171c2b;
-  --panel-3:#0d111c;
-  --text:#f4f0e8;
-  --muted:#a9adbd;
-  --dim:#6f7485;
-  --line:rgba(255,255,255,.12);
-  --glow:rgba(122,162,255,.22);
-  --supportive:#57d68d;
-  --skeptical:#ffb454;
-  --anxious:#ff6767;
-  --ambivalent:#9ea7ff;
-  --unknown:#7c8296;
-  --accent:#87a7ff;
-  --radius:28px;
+  --bg:#080a12; --panel:#111521; --panel2:#171c2b; --text:#f4f0e8; --muted:#a9adbd; --dim:#747b8f;
+  --line:rgba(255,255,255,.12); --supportive:#57d68d; --skeptical:#ffb454; --anxious:#ff6767; --ambivalent:#9ea7ff; --unknown:#7c8296; --accent:#87a7ff; --radius:28px;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45;overflow-x:hidden}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45;overflow-x:hidden}
 body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 15% 10%,rgba(87,214,141,.18),transparent 28%),radial-gradient(circle at 85% 5%,rgba(158,167,255,.22),transparent 32%),radial-gradient(circle at 50% 90%,rgba(255,180,84,.13),transparent 34%),linear-gradient(180deg,#080a12 0%,#0b0f19 58%,#080a12 100%)}
-body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.28;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000,transparent 78%)}
-.wrap{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:32px 0 56px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:28px}.brand{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.pulse{width:12px;height:12px;border-radius:50%;background:var(--supportive);box-shadow:0 0 0 7px rgba(87,214,141,.14),0 0 30px rgba(87,214,141,.65)}.meta{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.chip{border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--muted);border-radius:999px;padding:8px 11px;font:600 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.06em}
-.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(330px,.85fr);gap:22px;align-items:stretch;margin-bottom:22px}.hero.unified{display:block}.hero-main,.hero-card,.panel{background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border:1px solid var(--line);box-shadow:0 24px 90px rgba(0,0,0,.28);border-radius:var(--radius);position:relative;overflow:hidden}.hero-main{padding:34px;min-height:360px}.hero.unified .hero-main{min-height:auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:28px;align-items:end}.hero-heading{grid-column:1/-1;position:relative;z-index:1}.hero-copy{position:relative;z-index:1}.hero-breakdown{position:relative;z-index:1;padding:22px;border-radius:24px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.hero-overview{max-width:60ch;color:var(--muted);font-size:15px;margin:0 0 20px}.hero-main:before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(135,167,255,.28),transparent 62%)}.eyebrow{font:700 12px/1 JetBrains Mono,monospace;color:var(--accent);letter-spacing:.13em;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:clamp(3rem,7.2vw,6.6rem);line-height:.92;letter-spacing:-.075em;margin:0;max-width:none;font-weight:850}.readout{font-size:clamp(1.25rem,2.5vw,2rem);font-weight:750;letter-spacing:-.035em;max-width:690px;margin:0;color:#fff}.readout span{color:var(--supportive)}.subline{max-width:62ch;color:var(--muted);margin:18px 0 0;font-size:15px}.hero-card{padding:24px;display:flex;flex-direction:column;gap:18px}.big-number{font-size:clamp(4rem,9vw,7.4rem);font-weight:850;letter-spacing:-.08em;line-height:.82}.big-label{color:var(--muted);font-size:14px}.stance-pill{display:inline-flex;align-items:center;gap:8px;width:max-content;border-radius:999px;padding:8px 12px;background:rgba(255,255,255,.07);border:1px solid var(--line);font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em}.dot{width:10px;height:10px;border-radius:50%;background:currentColor}.bars{display:grid;gap:12px;margin-top:auto}.mini-bar{display:grid;grid-template-columns:110px minmax(0,1fr) 130px;gap:10px;align-items:center;font:700 12px/1 JetBrains Mono,monospace;color:var(--muted);text-transform:uppercase}.track{height:12px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.fill{height:100%;border-radius:inherit;min-width:2px}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}.stat{padding:17px;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.stat .label{font-size:19px;line-height:1.05;font-weight:850;letter-spacing:-.035em;color:var(--text);text-transform:none}.stat .value{color:var(--muted);font-size:13px;margin-top:9px;font-weight:650;letter-spacing:0}.layout{display:grid;grid-template-columns:1.4fr .8fr;gap:22px}.panel{padding:24px}.panel.full{grid-column:1/-1}.panel-title{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}.panel h2{font-size:25px;line-height:1.05;letter-spacing:-.04em;margin:0}.panel p{margin:7px 0 0;color:var(--muted);font-size:14px;max-width:60ch}.tag{font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);white-space:nowrap}.chart-wrap{position:relative;height:330px}.chart-wrap.short{height:280px}.topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.topic-card{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:13px;min-height:118px}.topic-name{font-weight:800;letter-spacing:-.02em}.topic-total{font:700 12px/1 JetBrains Mono,monospace;color:var(--dim);margin-top:5px}.topic-stack{display:flex;height:11px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.07);margin:13px 0 11px}.topic-line{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px}.topic-line strong{color:var(--text)}.source-list,.quote-list{display:grid;gap:14px}.source-item{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}.source-name{font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.source-stack{height:34px;display:flex;overflow:hidden;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid var(--line)}.source-stack span{height:100%}.quote{border-radius:22px;padding:20px;background:rgba(255,255,255,.052);border:1px solid var(--line)}.quote blockquote{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:22px;line-height:1.35;margin:0;letter-spacing:-.025em;font-weight:650}.quote-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.quote-meta span{font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:rgba(255,255,255,.06);border-radius:999px;padding:7px 9px}.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.legend span{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.06em}.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}.loading,.err,.empty{border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:var(--radius);padding:44px;text-align:center;color:var(--muted)}.err{text-align:left;border-color:rgba(255,103,103,.45);color:#ffd8d8}.foot{margin-top:22px;color:var(--dim);font-size:12px;text-align:center}.foot button{all:unset;color:var(--muted);text-decoration:underline;cursor:pointer}.method{display:none;margin-top:12px;color:var(--dim);font-size:12px;text-align:center}.method.show{display:block}@media(max-width:920px){.hero,.layout{grid-template-columns:1fr}.hero.unified .hero-main{grid-template-columns:1fr;align-items:start}.stat-grid,.topic-grid{grid-template-columns:repeat(2,1fr)}.hero-main{min-height:auto}.source-item{grid-template-columns:1fr}}@media(max-width:560px){.wrap{width:min(100% - 22px,1180px);padding-top:20px}.topbar{display:block}.meta{justify-content:flex-start;margin-top:14px}.hero-main,.hero-card,.panel{border-radius:22px;padding:20px}.stat-grid,.topic-grid{grid-template-columns:1fr}.chart-wrap{height:300px}.hero h1{font-size:3.25rem}.big-number{font-size:4.8rem}}
-
-.topic-dominant{margin-top:8px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-family:"Inter",system-ui,sans-serif}
- .topic-dominant strong{font-weight:800}
-.topic-stack span{cursor:help}
-.topic-legend{margin:-6px 0 16px}
-.quote blockquote .quote-more{display:none}
-.quote.expanded blockquote .quote-more{display:inline}
-.quote.expanded blockquote .quote-ellipsis{display:none}
-.quote-toggle{margin-top:14px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);border-radius:999px;padding:9px 12px;font:800 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;cursor:pointer}
-.quote-toggle:hover{background:rgba(255,255,255,.1)}
-
-.about-panel{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-bottom:22px;background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.032));border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 24px 90px rgba(0,0,0,.22)}
-.about-copy p,.method-panel p{margin:0 0 13px;color:var(--muted);font-size:15px;max-width:none}
-.about-copy p:last-child,.method-panel p:last-child{margin-bottom:0}
-.info-panel{display:grid;gap:22px}
-.info-section{border-top:1px solid var(--line);padding-top:20px}
-.info-section:first-of-type{border-top:0;padding-top:0}
-.info-section h3{font-size:18px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;color:var(--text)}
-.info-section p{max-width:none;line-height:1.6}
-.info-section .definitions{margin-top:10px}
-.panel-title.compact{margin-bottom:14px}
-.definitions{display:grid;grid-template-columns:1fr;gap:10px}
-.definition{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:13px}
-.definition div{display:flex;align-items:center;gap:8px;font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em}
-.definition i{width:10px;height:10px;border-radius:50%;display:inline-block}
-.definition p{margin:8px 0 0;color:var(--muted);font-size:13px}
-.source-counts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.source-count-card{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:16px}
-.source-count-name{font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-.source-count-value{font-size:26px;font-weight:850;letter-spacing:-.04em;margin-top:8px}
-.quote-meta a{font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--text);background:rgba(255,255,255,.08);border-radius:999px;padding:7px 9px;text-decoration:none;border:1px solid var(--line)}
-.quote-meta a:hover{background:rgba(255,255,255,.14)}
-@media(max-width:920px){.about-panel{grid-template-columns:1fr}.source-counts{grid-template-columns:1fr}}
-
+body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.25;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000,transparent 78%)}
+.wrap{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:32px 0 56px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:28px}.brand{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.pulse{width:12px;height:12px;border-radius:50%;background:var(--supportive);box-shadow:0 0 0 7px rgba(87,214,141,.14),0 0 30px rgba(87,214,141,.65)}.meta{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.chip{border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--muted);border-radius:999px;padding:8px 11px;font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.06em}.loading,.err,.empty{border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:var(--radius);padding:44px;text-align:center;color:var(--muted)}.err{text-align:left;border-color:rgba(255,103,103,.45);color:#ffd8d8}.hero-main,.panel{background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border:1px solid var(--line);box-shadow:0 24px 90px rgba(0,0,0,.28);border-radius:var(--radius);position:relative;overflow:hidden}.hero-main{padding:34px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:28px;align-items:end}.hero-heading{position:relative;z-index:1}.hero-breakdown{position:relative;z-index:1;padding:22px;border-radius:24px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.hero-main:before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(135,167,255,.28),transparent 62%)}.eyebrow{font:800 12px/1 JetBrains Mono,monospace;color:var(--accent);letter-spacing:.13em;text-transform:uppercase;margin-bottom:20px}.hero h1{font-size:clamp(3rem,7.2vw,6.4rem);line-height:.92;letter-spacing:-.075em;margin:0;font-weight:850}.hero-overview{max-width:64ch;color:var(--muted);font-size:15px;margin:20px 0 0}.readout{font-size:clamp(1.25rem,2.5vw,2rem);font-weight:750;letter-spacing:-.035em;max-width:690px;margin:22px 0 0;color:#fff}.subline{max-width:62ch;color:var(--muted);margin:14px 0 0;font-size:15px}.bars{display:grid;gap:12px}.mini-bar{display:grid;grid-template-columns:110px minmax(0,1fr) 130px;gap:10px;align-items:center;font:700 12px/1 JetBrains Mono,monospace;color:var(--muted);text-transform:uppercase}.track{height:12px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.fill{height:100%;border-radius:inherit;min-width:2px}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}.stat{padding:17px;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.stat .label{font-size:19px;line-height:1.05;font-weight:850;letter-spacing:-.035em;color:var(--text)}.stat .value{color:var(--muted);font-size:13px;margin-top:9px;font-weight:650}.layout{display:grid;gap:22px}.panel{padding:24px}.panel-title{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}.panel h2{font-size:25px;line-height:1.05;letter-spacing:-.04em;margin:0}.panel p{margin:7px 0 0;color:var(--muted);font-size:14px;max-width:68ch}.tag{font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);white-space:nowrap}.chart-wrap{position:relative;height:330px}.chart-wrap.short{height:280px}.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.legend span{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.06em}.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}.topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.topic-card{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:13px;min-height:118px}.topic-name{font-weight:800;letter-spacing:-.02em}.topic-total{font:700 12px/1 JetBrains Mono,monospace;color:var(--dim);margin-top:5px}.topic-stack{display:flex;height:11px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.07);margin:13px 0 11px}.topic-line{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px}.topic-line strong{color:var(--text)}.source-counts{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.source-card{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:16px}.source-name{font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.source-value{font-size:28px;font-weight:850;letter-spacing:-.04em;margin-top:8px}.source-stack{height:10px;display:flex;overflow:hidden;border-radius:999px;background:rgba(255,255,255,.07);margin-top:12px}.quote-list{display:grid;gap:14px}.quote{border-radius:22px;padding:20px;background:rgba(255,255,255,.052);border:1px solid var(--line)}.quote blockquote{font-size:22px;line-height:1.35;margin:0;letter-spacing:-.025em;font-weight:650}.quote blockquote .quote-more{display:none}.quote.expanded blockquote .quote-more{display:inline}.quote.expanded blockquote .quote-ellipsis{display:none}.quote-toggle{margin-top:14px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);border-radius:999px;padding:9px 12px;font:800 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;cursor:pointer}.quote-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.quote-meta span,.quote-meta a{font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:rgba(255,255,255,.06);border-radius:999px;padding:7px 9px;text-decoration:none;border:1px solid transparent}.quote-meta a{color:var(--text);border-color:var(--line)}.definitions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.definition{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:13px}.definition div{display:flex;align-items:center;gap:8px;font:800 12px/1 JetBrains Mono,monospace;text-transform:uppercase;letter-spacing:.08em}.definition i{width:10px;height:10px;border-radius:50%;display:inline-block}.definition p{margin:8px 0 0;color:var(--muted);font-size:13px}.info-section{border-top:1px solid var(--line);padding-top:20px;margin-top:20px}.info-section:first-child{border-top:0;padding-top:0;margin-top:0}.info-section h3{font-size:18px;line-height:1.1;letter-spacing:-.03em;margin:0 0 10px}.info-section p{max-width:none;line-height:1.6}.foot{margin-top:22px;color:var(--dim);font-size:12px;text-align:center}@media(max-width:960px){.hero-main{grid-template-columns:1fr}.stat-grid,.topic-grid,.definitions,.source-counts{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.wrap{width:min(100% - 22px,1180px);padding-top:20px}.topbar{display:block}.meta{justify-content:flex-start;margin-top:14px}.hero-main,.panel{border-radius:22px;padding:20px}.stat-grid,.topic-grid,.definitions,.source-counts{grid-template-columns:1fr}.chart-wrap{height:300px}.hero h1{font-size:3.25rem}.mini-bar{grid-template-columns:1fr}.mini-bar span:last-child{text-align:left!important}}
 </style>
 </head>
 <body>
@@ -78,386 +29,113 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.28;background-i
       <span class="chip" id="m-window">—</span>
     </div>
   </div>
-
   <main id="content" class="loading">Loading the latest discourse signal…</main>
-
-  <div class="foot">
-    Public comments from Hacker News, selected YouTube channels, and Bluesky. Automated classification is approximate.
-  </div>
+  <div class="foot">Public comments and posts from Hacker News, Bluesky, Reddit RSS feeds, Stack Exchange, and selected YouTube channels. Automated classification is approximate.</div>
 </div>
-
 <script>
 const ENDPOINT = "https://script.google.com/macros/s/AKfycbx-0UIQ1YRwl1ksgvs4d0K13SGSlRNH7teeidsfcW_dg83RksA_khW5sJb6c_cahzBW/exec";
 const STANCES = ["supportive","skeptical","anxious","ambivalent"];
 const COLORS = { supportive:"#57d68d", skeptical:"#ffb454", anxious:"#ff6767", ambivalent:"#9ea7ff", unknown:"#7c8296" };
-const TOPICS = {
-  integrity:"Academic integrity",
-  assessment:"Assessment",
-  equity:"Equity",
-  workload:"Workload",
-  learning_quality:"Learning quality",
-  privacy:"Privacy",
-  other:"Other"
-};
+const TOPICS = { integrity:"Academic integrity", assessment:"Assessment", equity:"Equity", workload:"Workload", learning_quality:"Learning quality", privacy:"Privacy", other:"Other" };
 const ROLE_LABELS = { student:"Students", educator:"Educators", admin:"Admins", unknown:"Unknown" };
-const chartFont = { family:"Inter", size:11 };
-Chart.defaults.color = "#a9adbd";
-Chart.defaults.font.family = "Inter";
-Chart.defaults.borderColor = "rgba(255,255,255,.11)";
-
+Chart.defaults.color = "#a9adbd"; Chart.defaults.font.family = "Inter"; Chart.defaults.borderColor = "rgba(255,255,255,.11)";
 load();
-
 async function load(){
   try{
     const res = await fetch(ENDPOINT, { cache:"no-store" });
     if(!res.ok) throw new Error("HTTP " + res.status);
-    const data = await res.json();
-    render(data);
+    render(await res.json());
   }catch(e){
     console.error("Dashboard data load failed:", e);
     document.getElementById("content").className = "err";
     document.getElementById("content").textContent = "Data did not load. The latest dataset could not be reached. Refresh the page or check back later.";
   }
 }
-
 function render(data){
   const rows = normalizeRows(data.rows || []);
   setMeta(data, rows);
-  if(!rows.length){
-    document.getElementById("content").className = "empty";
-    document.getElementById("content").textContent = "No classified items yet.";
-    return;
-  }
-
+  if(!rows.length){ document.getElementById("content").className = "empty"; document.getElementById("content").textContent = "No classified items yet."; return; }
   const totals = countBy(rows, "Stance", STANCES);
   const dominant = topKey(totals) || "ambivalent";
   const dominantPct = pct(totals[dominant], sum(Object.values(totals)));
   const topTopic = topTopicSummary(rows);
   const topRole = topRoleSummary(rows);
-  const sourceCount = new Set(rows.map(r => r.Source).filter(Boolean)).size;
   const sources = buildSources(rows);
   const days = buildDaily(rows);
   const topics = buildTopics(rows);
   const roles = buildRoles(rows);
   const quotes = pickQuotes(rows);
-
   document.getElementById("content").className = "";
   document.getElementById("content").innerHTML = `
-    <section class="hero unified">
-      <div class="hero-main">
-        <div class="hero-heading">
-          <div class="eyebrow">Daily public discourse signal</div>
-          <h1>What are people saying about GenAI in education?</h1>
-        </div>
-
-        <div class="hero-copy">
-          <p class="readout">Current discourse: mostly <span style="color:${COLORS[dominant]}">${escapeHtml(dominant)}</span></p>
-          <p class="subline">${dominantPct}% of tracked comments are classified as ${escapeHtml(dominant)}, based on ${rows.length} public comments from Hacker News, selected YouTube channels, and Bluesky.</p>
-        </div>
-
-        <div class="hero-breakdown" aria-label="Stance breakdown">
-          <div class="bars">${STANCES.map(s => stanceBar(s, totals[s], rows.length)).join("")}</div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="stat-grid" aria-label="At a glance">
-      <div class="stat"><div class="label">Most discussed topic</div><div class="value">${escapeHtml(topTopic.label)}</div></div>
-      <div class="stat"><div class="label">Most detected speaker role</div><div class="value">${escapeHtml(topRole.label)}</div></div>
-      <div class="stat"><div class="label">Public source${sourceCount === 1 ? "" : "s"}</div><div class="value">${sourceCount}</div></div>
-      <div class="stat"><div class="label">Days represented</div><div class="value">${Object.keys(days.byDate).length}</div></div>
-    </section>
-
+    <section class="hero"><div class="hero-main">
+      <div class="hero-heading"><div class="eyebrow">Daily public discourse signal</div><h1>What are people saying about GenAI in education?</h1><p class="hero-overview">This dashboard reads public discourse about AI in education and turns it into a compact daily signal across multiple public sources, including Reddit RSS feeds.</p><p class="readout">The current discourse is mostly <span style="color:${COLORS[dominant]}">${escapeHtml(dominant)}</span>.</p><p class="subline">${dominantPct}% of tracked items are classified as ${escapeHtml(dominant)}, based on ${rows.length} public comments and posts.</p></div>
+      <div class="hero-breakdown"><div class="bars">${STANCES.map(s => stanceBar(s, totals[s], rows.length)).join("")}</div></div>
+    </div></section>
+    <section class="stat-grid" aria-label="At a glance"><div class="stat"><div class="label">Most discussed topic</div><div class="value">${escapeHtml(topTopic.label)}</div></div><div class="stat"><div class="label">Most detected speaker role</div><div class="value">${escapeHtml(topRole.label)}</div></div><div class="stat"><div class="label">Public sources</div><div class="value">${sources.length}</div></div><div class="stat"><div class="label">Days represented</div><div class="value">${days.labels.length}</div></div></section>
     <section class="layout">
-      <div class="panel full">
-        <div class="panel-title"><div><h2>Mood over time</h2><p>Each day adds up to 100%, making stance shifts visible even when comment volume changes.</p></div><div class="tag">daily share</div></div>
-        <div class="chart-wrap"><canvas id="stanceChart"></canvas></div>
-        ${legend()}
-      </div>
-
-      <div class="panel full">
-        <div class="panel-title"><div><h2>What the conversation is about</h2><p>Every topic card shows volume plus the stance pattern inside that topic.</p></div><div class="tag">topic × stance</div></div>
-        <div class="topic-legend">${legend()}</div>
-        <div class="topic-grid" id="topicGrid"></div>
-      </div>
-
-      <div class="panel full">
-        <div class="panel-title"><div><h2>Who said what?</h2><p>Detected speaker roles, stacked by stance.</p></div><div class="tag">role split</div></div>
-        <div class="chart-wrap short"><canvas id="roleChart"></canvas></div>
-      </div>
-
-      <div class="panel full">
-        <div class="panel-title"><div><h2>Voices from the dataset</h2><p>Two strong examples from the current dataset. These examples are not representative on their own, but they show how the categories appear in real public discussion.</p></div><div class="tag">comments</div></div>
-        <div class="quote-list" id="quoteList"></div>
-      </div>
-
-      <div class="panel full method-panel info-panel">
-        <div class="panel-title"><div><h2>About the dataset</h2><p>Context, sources, and limits for reading this monitor.</p></div><div class="tag">read before citing</div></div>
-
-        <div class="info-section">
-          <h3>About this monitor</h3>
-          <p>This page tracks public conversation about generative AI in education across public discussion spaces. It collects comments and posts from Hacker News, selected YouTube channels, and Bluesky, then classifies each item by stance, topic, likely speaker role, and source. The goal is to turn scattered public discussion into a compact daily signal: what people are concerned about, what benefits they mention, which topics are most active, who appears to be speaking, and how the tone changes over time.</p>
-          <p>This is not a survey and should not be read as a representative measure of public opinion. It is a monitor of public comments and posts from the sources currently included. The dataset reflects what was visible to the collection script during the lookback window, what matched the project’s search terms, and what passed the relevance filter. Reddit is planned for a future version to broaden the sample and capture more community-level discussion.</p>
-          <p>Automated classification is approximate. The charts are best read as directional patterns, not definitive measurements. Individual comments can be sarcastic, ambiguous, or mixed, so the dashboard is most useful for spotting recurring themes and example language rather than making precise claims about what any group believes overall.</p>
-        </div>
-
-        <div class="info-section">
-          <h3>Stance definitions</h3>
-          <div class="definitions">${stanceDefinitions()}</div>
-        </div>
-
-        <div class="info-section">
-          <h3>Where the comments come from</h3>
-          <p>The current dataset combines public comments and posts from Hacker News, selected YouTube channels, and Bluesky. These sources are useful because they contain active public discussion, but they are not neutral mirrors of the wider population. Hacker News tends to overrepresent technical, startup-oriented, and policy-adjacent perspectives. YouTube comments reflect the audiences of the selected videos and the framing created by those channels. Bluesky reflects public posts surfaced through keyword search and may overrepresent people who actively post about education, technology, media, labour, or public policy. Future versions will add Reddit to broaden the sample and capture more community-based discussion.</p>
-          <div class="source-counts" id="sourceCounts"></div>
-        </div>
-
-        <div class="info-section">
-          <h3>Methodology and limits</h3>
-          <p>This dashboard uses public comments and posts collected from Hacker News, selected YouTube channels, and Bluesky. Each item is cleaned, filtered for relevance, and classified into a small set of categories: stance, topic, likely speaker role, and source. The same normalized fields are used across sources so that posts from different platforms can be compared in one view.</p>
-          <p>The dashboard should not be read as a representative poll. It does not claim to show what students, teachers, parents, faculty, administrators, or the general public believe overall. It shows patterns in the public comments currently included in the dataset, and those patterns are shaped by the sources, search terms, API availability, and daily collection window.</p>
-          <p>The source mix affects the signal. Hacker News tends to reflect a more technical audience. YouTube comments reflect the audiences of the selected channels. Bluesky reflects public keyword-matched posts from people who choose to post publicly. Reddit, once added, will likely introduce a different kind of community discussion, including more topic-specific and community-moderated conversations.</p>
-          <p>Automated labels are approximate. Some comments are sarcastic, ambiguous, or context-dependent. Long comments may contain multiple stances at once. A single comment can also mention several topics, while the classifier assigns one primary topic for charting. For that reason, the dashboard is best used to identify broad patterns, shifts, and examples, not to make precise claims about public opinion.</p>
-        </div>
-      </div>
+      <div class="panel"><div class="panel-title"><div><h2>Mood over time</h2><p>Each day adds up to 100%, making stance shifts visible even when item volume changes.</p></div><div class="tag">daily share</div></div><div class="chart-wrap"><canvas id="stanceChart"></canvas></div>${legend()}</div>
+      <div class="panel"><div class="panel-title"><div><h2>What the conversation is about</h2><p>Every topic card shows volume plus the stance pattern inside that topic.</p></div><div class="tag">topic × stance</div></div><div class="topic-grid" id="topicGrid"></div></div>
+      <div class="panel"><div class="panel-title"><div><h2>Who said what?</h2><p>Detected speaker roles, stacked by stance.</p></div><div class="tag">role split</div></div><div class="chart-wrap short"><canvas id="roleChart"></canvas></div></div>
+      <div class="panel"><div class="panel-title"><div><h2>Source mix</h2><p>Counts by source. Reddit rows come from public subreddit <code>/new/.rss</code> feeds and local AI×education filtering.</p></div><div class="tag">sources</div></div><div class="source-counts" id="sourceCounts"></div></div>
+      <div class="panel"><div class="panel-title"><div><h2>Voices from the dataset</h2><p>Selected comments or posts that illustrate strongly supportive, skeptical, and anxious parts of the conversation. These examples are not representative on their own.</p></div><div class="tag">examples</div></div><div class="quote-list" id="quoteList"></div></div>
+      <div class="panel"><div class="panel-title"><div><h2>About the dataset</h2><p>Context, sources, and limits for reading this monitor.</p></div><div class="tag">read before citing</div></div>${methodology(sources)}</div>
     </section>`;
-  drawStanceChart(days);
-  renderTopics(topics);
-  drawRoleChart(roles);
-  renderSourceCounts(sources);
-  renderQuotes(quotes);
+  drawStanceChart(days); renderTopics(topics); drawRoleChart(roles); renderSourceCounts(sources); renderQuotes(quotes);
 }
-
 function normalizeRows(rows){
-  return rows
-    .filter(r => r && r.Topic !== "off_topic")
-    .map(r => ({
-      Date: String(r.CommentDate || r.Date || r.CollectedDate || "").slice(0,10),
-      CollectedDate: String(r.CollectedDate || r.Date || "").slice(0,10),
-      CommentDate: String(r.CommentDate || r.Date || "").slice(0,10),
-      Context: String(r.Context || ""),
-      Stance: STANCES.includes(r.Stance) ? r.Stance : "ambivalent",
-      Topic: TOPICS[r.Topic] ? r.Topic : "other",
-      Role: r.Role || "unknown",
-      Snippet: String(r.Snippet || ""),
-      FullText: String(r.FullText || r.Snippet || ""),
-      Engagement: Number(r.Engagement ?? r.Score ?? 0),
-      Source: String(r.Source || "unknown"),
-      SourceUrl: String(r.SourceUrl || "")
-    }));
+  return rows.map(r => ({
+    CollectedDate: asDateString(r.CollectedDate || r.Date), CommentDate: asDateString(r.CommentDate || r.Date || r.CollectedDate), Date: asDateString(r.CommentDate || r.Date || r.CollectedDate),
+    Context: String(r.Context || ""), Stance: STANCES.includes(String(r.Stance || "").toLowerCase()) ? String(r.Stance).toLowerCase() : "ambivalent", Topic: TOPICS[String(r.Topic || "").toLowerCase()] ? String(r.Topic).toLowerCase() : "other",
+    Role: ROLE_LABELS[String(r.Role || "").toLowerCase()] ? String(r.Role).toLowerCase() : "unknown", Snippet: String(r.Snippet || ""), FullText: String(r.FullText || r.Snippet || ""), Engagement: Number(r.Engagement || r.Score || 0), Source: String(r.Source || "unknown").toLowerCase(), SourceUrl: String(r.SourceUrl || "")
+  })).filter(r => r.Topic !== "off_topic");
 }
 function setMeta(data, rows){
   const dates = rows.map(r => r.Date).filter(Boolean).sort();
-  const updated = data.updated ? new Date(data.updated) : null;
-  document.getElementById("m-updated").textContent = updated && !isNaN(updated) ? "Updated " + updated.toLocaleDateString() : "Updated —";
+  document.getElementById("m-updated").textContent = data.updated ? "Updated " + new Date(data.updated).toLocaleString() : "Updated";
   document.getElementById("m-count").textContent = rows.length + " items";
-  document.getElementById("m-window").textContent = dates.length ? dates[0] + " → " + dates[dates.length - 1] : "No date range";
+  document.getElementById("m-window").textContent = dates.length ? dates[0] + " → " + dates[dates.length - 1] : "—";
 }
-function stanceBar(s, n, total){
-  const width = pct(n,total);
-  const count = Number(n || 0);
-  return `<div class="mini-bar"><span>${titleCase(s)}</span><div class="track"><div class="fill" style="width:${width}%;background:${COLORS[s]}"></div></div><span>${width}% / ${count} comments</span></div>`;
-}
-function countBy(rows, field, allowed){
-  const out = {}; allowed.forEach(k => out[k] = 0);
-  rows.forEach(r => { if(out[r[field]] !== undefined) out[r[field]]++; });
-  return out;
-}
-function topKey(obj){ return Object.keys(obj).sort((a,b) => obj[b] - obj[a])[0]; }
-function sum(arr){ return arr.reduce((a,b) => a + b, 0); }
-function pct(n,d){ return d ? Math.round((n/d)*100) : 0; }
-function topTopicSummary(rows){
-  const counts = {}; rows.forEach(r => counts[r.Topic] = (counts[r.Topic] || 0) + 1);
-  const k = topKey(counts) || "other";
-  return { key:k, label:TOPICS[k] || "Other", value:counts[k] || 0 };
-}
-function topRoleSummary(rows){
-  const counts = {}; rows.forEach(r => counts[r.Role] = (counts[r.Role] || 0) + 1);
-  const k = topKey(counts) || "unknown";
-  return { key:k, label:ROLE_LABELS[k] || titleCase(k), value:counts[k] || 0 };
-}
-function buildDaily(rows){
-  const byDate = {};
-  rows.forEach(r => {
-    if(!r.Date) return;
-    byDate[r.Date] ||= { total:0 };
-    STANCES.forEach(s => byDate[r.Date][s] ||= 0);
-    byDate[r.Date][r.Stance]++; byDate[r.Date].total++;
-  });
-  const labels = Object.keys(byDate).sort();
-  return { byDate, labels };
-}
-function buildTopics(rows){
-  const out = {};
-  Object.keys(TOPICS).forEach(t => { out[t] = { total:0 }; STANCES.forEach(s => out[t][s] = 0); });
-  rows.forEach(r => { out[r.Topic].total++; out[r.Topic][r.Stance]++; });
-  return Object.keys(out).filter(t => out[t].total > 0).sort((a,b) => out[b].total - out[a].total).map(t => ({ key:t, ...out[t] }));
-}
-function buildRoles(rows){
-  const out = {};
-  rows.forEach(r => {
-    out[r.Role] ||= { total:0 };
-    STANCES.forEach(s => out[r.Role][s] ||= 0);
-    out[r.Role].total++; out[r.Role][r.Stance]++;
-  });
-  return Object.keys(out).sort((a,b) => out[b].total - out[a].total).map(k => ({ key:k, ...out[k] }));
-}
-function buildSources(rows){
-  const out = {};
-  rows.forEach(r => {
-    out[r.Source] ||= { total:0 };
-    STANCES.forEach(s => out[r.Source][s] ||= 0);
-    out[r.Source].total++; out[r.Source][r.Stance]++;
-  });
-  return Object.keys(out).sort((a,b) => out[b].total - out[a].total).map(k => ({ key:k, ...out[k] }));
-}
+function stanceBar(s,n,total){ const p=pct(n,total); return `<div class="mini-bar"><span>${titleCase(s)}</span><div class="track"><div class="fill" style="width:${p}%;background:${COLORS[s]}"></div></div><span style="text-align:right">${n||0} · ${p}%</span></div>`; }
+function legend(){ return `<div class="legend">${STANCES.map(s => `<span><i style="background:${COLORS[s]}"></i>${titleCase(s)}</span>`).join("")}</div>`; }
 function drawStanceChart(daily){
-  new Chart(document.getElementById("stanceChart"), {
-    type:"line",
-    data:{ labels: daily.labels, datasets: STANCES.map(s => ({
-      label:titleCase(s),
-      data: daily.labels.map(d => pct(daily.byDate[d][s], daily.byDate[d].total)),
-      borderColor:COLORS[s], backgroundColor:COLORS[s] + "45", fill:true,
-      tension:.38, pointRadius:0, borderWidth:2
-    }))},
-    options:{ maintainAspectRatio:false, interaction:{mode:"index",intersect:false}, plugins:{legend:{display:false}, tooltip:{callbacks:{label:c => c.dataset.label + ": " + c.parsed.y + "%"}}}, scales:{ y:{stacked:true,min:0,max:100,ticks:{callback:v => v + "%", font:chartFont}, grid:{color:"rgba(255,255,255,.09)"}}, x:{ticks:{font:chartFont,maxRotation:0,autoSkip:true}, grid:{display:false}}}}
-  });
-}
-function drawMixChart(totals){
-  new Chart(document.getElementById("mixChart"), { type:"doughnut", data:{ labels:STANCES.map(titleCase), datasets:[{ data:STANCES.map(s => totals[s]), backgroundColor:STANCES.map(s => COLORS[s]), borderColor:"#111521", borderWidth:4, hoverOffset:8 }]}, options:{ maintainAspectRatio:false, cutout:"62%", plugins:{legend:{position:"bottom", labels:{usePointStyle:true, boxWidth:8, padding:14, font:chartFont}}, tooltip:{callbacks:{label:c => c.label + ": " + c.parsed + " items"}}}}});
-}
-function renderTopics(topics){
-  document.getElementById("topicGrid").innerHTML = topics.map(t => {
-    const lead = topKey(Object.fromEntries(STANCES.map(s => [s,t[s]]))) || "ambivalent";
-    const stack = STANCES.map(s => {
-      const count = t[s] || 0;
-      const share = pct(count, t.total);
-      return `<span style="width:${share}%;background:${COLORS[s]}" title="${titleCase(s)}: ${count} comments / ${share}%"></span>`;
-    }).join("");
-    return `<article class="topic-card"><div class="topic-name">${escapeHtml(TOPICS[t.key])}</div><div class="topic-total">${t.total} items</div><div class="topic-stack" aria-label="Stance mix for ${escapeHtml(TOPICS[t.key])}">${stack}</div><div class="topic-dominant">dominant: <strong style="color:${COLORS[lead]}">${escapeHtml(lead)}</strong></div></article>`;
-  }).join("");
+  new Chart(document.getElementById("stanceChart"), { type:"line", data:{ labels:daily.labels, datasets:STANCES.map(s => ({ label:titleCase(s), data:daily.labels.map(d => pct(daily.byDate[d][s], daily.byDate[d].total)), borderColor:COLORS[s], backgroundColor:hexToRgba(COLORS[s], .22), fill:true, tension:.32, pointRadius:0, borderWidth:2 })) }, options:{ responsive:true, maintainAspectRatio:false, interaction:{mode:"index",intersect:false}, scales:{ y:{ min:0, max:100, ticks:{callback:v=>v+"%"}, stacked:true }, x:{ grid:{display:false} } }, plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>c.dataset.label+": "+c.parsed.y+"%"}} } } });
 }
 function drawRoleChart(roles){
-  new Chart(document.getElementById("roleChart"), { type:"bar", data:{ labels:roles.map(r => ROLE_LABELS[r.key] || titleCase(r.key)), datasets:STANCES.map(s => ({ label:titleCase(s), data:roles.map(r => r[s] || 0), backgroundColor:COLORS[s], borderRadius:7, borderSkipped:false }))}, options:{ maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{callbacks:{label:c => c.dataset.label + ": " + c.parsed.y}}}, scales:{ x:{stacked:true, ticks:{font:chartFont}, grid:{display:false}}, y:{stacked:true, ticks:{precision:0,font:chartFont}, grid:{color:"rgba(255,255,255,.09)"}}}}});
+  new Chart(document.getElementById("roleChart"), { type:"bar", data:{ labels:roles.map(r => ROLE_LABELS[r.key] || titleCase(r.key)), datasets:STANCES.map(s => ({ label:titleCase(s), data:roles.map(r => r[s] || 0), backgroundColor:COLORS[s] })) }, options:{ responsive:true, maintainAspectRatio:false, scales:{ x:{stacked:true,grid:{display:false}}, y:{stacked:true,beginAtZero:true} }, plugins:{ legend:{position:"bottom"} } } });
+}
+function renderTopics(topics){
+  document.getElementById("topicGrid").innerHTML = topics.map(t => { const dom = topStance(t); return `<article class="topic-card"><div class="topic-name">${escapeHtml(TOPICS[t.key] || "Other")}</div><div class="topic-total">${t.total} items</div><div class="topic-stack">${STANCES.map(s => `<span title="${titleCase(s)}: ${t[s]||0}" style="width:${pct(t[s], t.total)}%;background:${COLORS[s]}"></span>`).join("")}</div><div class="topic-line"><span>Mostly</span><strong style="color:${COLORS[dom]}">${titleCase(dom)}</strong></div></article>`; }).join("");
 }
 function renderSourceCounts(sources){
-  const counts = {};
-  sources.forEach(src => { counts[normalizeSourceName(src.key)] = src.total || 0; });
-  const hn = counts["hackernews"] || counts["hacker news"] || 0;
-  const yt = counts["youtube"] || 0;
-  const bsky = counts["bluesky"] || counts["bsky"] || 0;
-  const rows = [
-    ["Hacker News", hn ? `${hn} comments` : "0 comments"],
-    ["YouTube", yt ? `${yt} comments` : "0 comments"],
-    ["Bluesky", bsky ? `${bsky} posts` : "0 posts"],
-    ["Reddit", "planned"]
-  ];
-  document.getElementById("sourceCounts").innerHTML = rows.map(([name, value]) => `<div class="source-count-card"><div class="source-count-name">${escapeHtml(name)}</div><div class="source-count-value">${escapeHtml(value)}</div></div>`).join("");
-}
-function normalizeSourceName(value){
-  return String(value || "").trim().toLowerCase();
-}
-function pickQuotes(rows){
-  // Pick two strong examples, while preferring stance diversity.
-  const scored = rows
-    .filter(r => quoteText(r).length >= 70)
-    .map(r => ({ row:r, score:quoteStrength(r, r.Stance) }))
-    .sort((a,b) => b.score - a.score);
-
-  const picked = [];
-  const usedStances = new Set();
-
-  scored.forEach(item => {
-    if(picked.length >= 2) return;
-    if(!usedStances.has(item.row.Stance)){
-      picked.push(item.row);
-      usedStances.add(item.row.Stance);
-    }
-  });
-
-  scored.forEach(item => {
-    if(picked.length >= 2 && !picked.includes(item.row)) return;
-    if(picked.length < 2 && !picked.includes(item.row)) picked.push(item.row);
-  });
-
-  return picked.slice(0, 2);
-}
-function bestQuoteFor(rows, stance){
-  const candidates = rows.filter(r => r.Stance === stance && quoteText(r).length >= 70);
-  if(!candidates.length) return null;
-  return candidates
-    .map(r => ({ row:r, score:quoteStrength(r, stance) }))
-    .sort((a,b) => b.score - a.score)[0].row;
-}
-function quoteText(r){
-  return String(r.FullText || r.Snippet || "").trim();
-}
-function quoteStrength(r, stance){
-  const text = quoteText(r);
-  const lower = text.toLowerCase();
-  const stanceTerms = {
-    supportive:["useful","helpful","benefit","beneficial","productivity","efficient","accessibility","creative","creativity","learn better","improve","promising","tool","assist","support"],
-    skeptical:["hype","unreliable","wrong","bullshit","doesn’t work","doesn't work","not useful","overrated","incentive","policy","claims","doubt","skeptical","quality","value"],
-    anxious:["cheating","plagiarism","privacy","risk","worried","concern","dependence","dependent","replace","job","labour","labor","equity","surveillance","learning loss","harm","threat"]
-  };
-  const topicTerms = {
-    integrity:["cheat","cheating","plagiarism","integrity"],
-    assessment:["assessment","grade","grading","exam","test","assignment"],
-    equity:["equity","access","accessibility","divide","unequal"],
-    workload:["workload","time","admin","productivity","efficient"],
-    learning_quality:["learn","learning","quality","understand","thinking"],
-    privacy:["privacy","data","surveillance"],
-    other:[]
-  };
-  const matches = (stanceTerms[stance] || []).reduce((n, term) => n + (lower.includes(term) ? 1 : 0), 0);
-  const topicMatches = (topicTerms[r.Topic] || []).reduce((n, term) => n + (lower.includes(term) ? 1 : 0), 0);
-  const length = text.length;
-  const substance = Math.min(length, 900) / 18;
-  const tooLongPenalty = length > 1800 ? 25 : length > 1200 ? 10 : 0;
-  const engagement = Math.min(Number(r.Engagement || 0), 25);
-  const sourceBonus = r.SourceUrl ? 4 : 0;
-  return (matches * 18) + (topicMatches * 8) + substance + engagement + sourceBonus - tooLongPenalty;
+  document.getElementById("sourceCounts").innerHTML = sources.map(src => `<article class="source-card"><div class="source-name">${escapeHtml(sourceLabel(src.key))}</div><div class="source-value">${src.total}</div><div class="source-stack">${STANCES.map(s => `<span title="${titleCase(s)}: ${src[s]||0}" style="width:${pct(src[s], src.total)}%;background:${COLORS[s]}"></span>`).join("")}</div></article>`).join("");
 }
 function renderQuotes(quotes){
   const el = document.getElementById("quoteList");
   if(!quotes.length){ el.innerHTML = `<div class="quote"><blockquote>Not enough substantial comments yet to surface voices.</blockquote></div>`; return; }
-  el.innerHTML = quotes.map((r, i) => {
-    const text = String(r.FullText || r.Snippet || "");
-    const parts = splitQuoteText(text, 110);
-    const toggle = parts.more ? `<button class="quote-toggle" type="button" data-quote-toggle="${i}" aria-expanded="false">Show full comment</button>` : "";
-    const sourceLink = r.SourceUrl ? `<a href="${escapeHtml(r.SourceUrl)}" target="_blank" rel="noopener noreferrer">View source</a>` : "";
-    return `<article class="quote" data-quote="${i}"><blockquote>“${escapeHtml(parts.head)}${parts.more ? `<span class="quote-ellipsis">…</span><span class="quote-more">${escapeHtml(parts.more)}</span>` : ""}”</blockquote>${toggle}<div class="quote-meta"><span style="color:${COLORS[r.Stance]}">${escapeHtml(r.Stance)}</span><span>${escapeHtml(TOPICS[r.Topic] || "Other")}</span><span>${escapeHtml(r.Source)}</span><span>${escapeHtml(r.Date)}</span>${sourceLink}</div></article>`;
-  }).join("");
-  el.querySelectorAll("[data-quote-toggle]").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const card = el.querySelector(`[data-quote="${btn.dataset.quoteToggle}"]`);
-      const expanded = card.classList.toggle("expanded");
-      btn.textContent = expanded ? "Show less" : "Show full comment";
-      btn.setAttribute("aria-expanded", expanded ? "true" : "false");
-    });
-  });
+  el.innerHTML = quotes.map((r,i) => { const parts=splitQuoteText(r.FullText || r.Snippet || "", 520); const toggle=parts.more ? `<button class="quote-toggle" type="button" data-quote-toggle="${i}" aria-expanded="false">Show full item</button>` : ""; const sourceLink=r.SourceUrl ? `<a href="${escapeHtml(r.SourceUrl)}" target="_blank" rel="noopener noreferrer">View source</a>` : ""; return `<article class="quote" data-quote="${i}"><blockquote>“${escapeHtml(parts.head)}${parts.more ? `<span class="quote-ellipsis">…</span><span class="quote-more">${escapeHtml(parts.more)}</span>` : ""}”</blockquote>${toggle}<div class="quote-meta"><span style="color:${COLORS[r.Stance]}">${escapeHtml(r.Stance)}</span><span>${escapeHtml(TOPICS[r.Topic] || "Other")}</span><span>${escapeHtml(sourceLabel(r.Source))}</span><span>${escapeHtml(r.Date)}</span>${sourceLink}</div></article>`; }).join("");
+  el.querySelectorAll("[data-quote-toggle]").forEach(btn => btn.addEventListener("click", () => { const card = el.querySelector(`[data-quote="${btn.dataset.quoteToggle}"]`); const expanded = card.classList.toggle("expanded"); btn.textContent = expanded ? "Hide full item" : "Show full item"; btn.setAttribute("aria-expanded", expanded ? "true" : "false"); }));
 }
-function splitQuoteText(text, limit){
-  const clean = String(text || "").trim();
-  if(clean.length <= limit) return { head: clean, more: "" };
-  const cut = clean.lastIndexOf(" ", limit);
-  const at = cut > 70 ? cut : limit;
-  return { head: clean.slice(0, at).trim(), more: clean.slice(at).trim() };
-}
-function stanceDefinitions(){
-  const defs = {
-    supportive:"Comments that frame GenAI as useful, promising, efficient, or beneficial for teaching, learning, productivity, accessibility, or creativity.",
-    skeptical:"Comments that question GenAI’s value, reliability, incentives, policy claims, hype, or educational impact.",
-    anxious:"Comments that express concern about risks such as cheating, learning loss, privacy, labour, equity, student dependence, or institutional change.",
-    ambivalent:"Comments that are mixed, neutral, unclear, or do not fit cleanly into one stance."
-  };
-  return STANCES.map(s => `<div class="definition"><div><i style="background:${COLORS[s]}"></i><strong>${titleCase(s)}</strong></div><p>${escapeHtml(defs[s])}</p></div>`).join("");
-}
-function legend(){ return `<div class="legend">${STANCES.map(s => `<span title="${titleCase(s)}"><i style="background:${COLORS[s]}"></i>${s}</span>`).join("")}</div>`; }
-function titleCase(s){ return String(s || "").replace(/_/g," ").replace(/\b\w/g, c => c.toUpperCase()); }
-function truncate(s,n){ return s.length > n ? s.slice(0,n-1).trim() + "…" : s; }
-function escapeHtml(value){ return String(value ?? "").replace(/[&<>'"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c])); }
+function methodology(sources){ return `<div class="info-section"><h3>What this monitor is</h3><p>This page tracks public conversation about generative AI in education. It collects public comments and posts, filters them for relevance, and classifies each item by stance, topic, likely speaker role, and source.</p></div><div class="info-section"><h3>Stance definitions</h3><div class="definitions">${stanceDefinitions()}</div></div><div class="info-section"><h3>Where the items come from</h3><p>The current dataset combines Hacker News comments, Bluesky public posts, Reddit posts from selected subreddit RSS feeds, Stack Exchange questions, and selected YouTube comment threads. Reddit rows are sampled from broad feeds such as r/Professors, r/Teachers, r/college, r/University, r/GradSchool, and r/ChatGPT, then filtered locally for the intersection of AI and education.</p><div class="source-counts">${sources.map(s => `<article class="source-card"><div class="source-name">${escapeHtml(sourceLabel(s.key))}</div><div class="source-value">${s.total}</div></article>`).join("")}</div></div><div class="info-section"><h3>Limits</h3><p>This is not a representative poll. The source mix shapes the signal: Hacker News skews technical, Bluesky reflects public keyword-matched posts, Reddit reflects selected communities and their moderation norms, Stack Exchange reflects structured Q&A, and YouTube reflects the audiences of selected videos. Automated labels are approximate, especially for sarcasm, ambiguous posts, and mixed stances.</p></div>`; }
+function stanceDefinitions(){ const defs={supportive:"Sees AI as useful, promising, or manageable in education.", skeptical:"Questions quality, value, incentives, hype, or reliability.", anxious:"Emphasizes risk, cheating, privacy, harm, inequity, or loss.", ambivalent:"Mixed, uncertain, conditional, or mainly descriptive."}; return STANCES.map(s => `<div class="definition"><div><i style="background:${COLORS[s]}"></i>${titleCase(s)}</div><p>${defs[s]}</p></div>`).join(""); }
+function pickQuotes(rows){ const picked=[]; STANCES.forEach(s => { const best = rows.filter(r => r.Stance===s && (r.FullText||r.Snippet).length>80).sort((a,b)=>quoteScore(b)-quoteScore(a))[0]; if(best) picked.push(best); }); return picked.slice(0,4); }
+function quoteScore(r){ const text=String(r.FullText||r.Snippet||""); return Math.min(text.length, 1200)/10 + Math.min(Number(r.Engagement||0), 25) + (r.SourceUrl ? 8 : 0); }
+function splitQuoteText(text, limit){ text=String(text||"").replace(/\s+/g," ").trim(); if(text.length<=limit) return {head:text,more:""}; let cut=text.lastIndexOf(" ", limit); if(cut<limit*.65) cut=limit; return {head:text.slice(0,cut), more:text.slice(cut).trim()}; }
+function buildDaily(rows){ const byDate={}; rows.forEach(r=>{ if(!r.Date) return; byDate[r.Date] ||= {total:0}; STANCES.forEach(s=>byDate[r.Date][s] ||= 0); byDate[r.Date][r.Stance]++; byDate[r.Date].total++; }); return {byDate, labels:Object.keys(byDate).sort()}; }
+function buildTopics(rows){ const out={}; Object.keys(TOPICS).forEach(t=>{out[t]={key:t,total:0}; STANCES.forEach(s=>out[t][s]=0);}); rows.forEach(r=>{ out[r.Topic] ||= {key:r.Topic,total:0}; STANCES.forEach(s=>out[r.Topic][s] ||= 0); out[r.Topic].total++; out[r.Topic][r.Stance]++; }); return Object.values(out).filter(t=>t.total>0).sort((a,b)=>b.total-a.total); }
+function buildRoles(rows){ const out={}; rows.forEach(r=>{ out[r.Role] ||= {key:r.Role,total:0}; STANCES.forEach(s=>out[r.Role][s] ||= 0); out[r.Role].total++; out[r.Role][r.Stance]++; }); return Object.values(out).sort((a,b)=>b.total-a.total); }
+function buildSources(rows){ const out={}; rows.forEach(r=>{ out[r.Source] ||= {key:r.Source,total:0}; STANCES.forEach(s=>out[r.Source][s] ||= 0); out[r.Source].total++; out[r.Source][r.Stance]++; }); return Object.values(out).sort((a,b)=>b.total-a.total); }
+function countBy(rows,key,allowed){ const out={}; allowed.forEach(k=>out[k]=0); rows.forEach(r=>{ if(out[r[key]] !== undefined) out[r[key]]++; }); return out; }
+function topTopicSummary(rows){ const counts={}; rows.forEach(r=>counts[r.Topic]=(counts[r.Topic]||0)+1); const k=topKey(counts)||"other"; return {key:k,label:TOPICS[k]||"Other",value:counts[k]||0}; }
+function topRoleSummary(rows){ const counts={}; rows.forEach(r=>counts[r.Role]=(counts[r.Role]||0)+1); const k=topKey(counts)||"unknown"; return {key:k,label:ROLE_LABELS[k]||titleCase(k),value:counts[k]||0}; }
+function topStance(obj){ let best=STANCES[0]; STANCES.forEach(s=>{ if((obj[s]||0)>(obj[best]||0)) best=s; }); return best; }
+function topKey(obj){ return Object.keys(obj).sort((a,b)=>(obj[b]||0)-(obj[a]||0))[0]; }
+function sourceLabel(src){ const labels={hackernews:"Hacker News",bluesky:"Bluesky",reddit:"Reddit",stackexchange:"Stack Exchange",youtube:"YouTube"}; return labels[src] || titleCase(src||"unknown"); }
+function asDateString(v){ if(!v) return ""; if(v instanceof Date && !isNaN(v)) return v.toISOString().slice(0,10); const s=String(v); if(/^\d{4}-\d{2}-\d{2}/.test(s)) return s.slice(0,10); const d=new Date(s); return isNaN(d) ? s : d.toISOString().slice(0,10); }
+function pct(n,d){ return d ? Math.round((Number(n||0)/Number(d))*100) : 0; }
+function sum(arr){ return arr.reduce((a,b)=>a+Number(b||0),0); }
+function titleCase(s){ return String(s||"").replace(/_/g," ").replace(/\b\w/g,m=>m.toUpperCase()); }
+function escapeHtml(s){ return String(s||"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c])); }
+function hexToRgba(hex,a){ const n=parseInt(hex.slice(1),16); return `rgba(${(n>>16)&255},${(n>>8)&255},${n&255},${a})`; }
 </script>
 </body>
 </html>
